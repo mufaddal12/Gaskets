@@ -2,7 +2,7 @@
  * Created by JFormDesigner on Sun Feb 05 11:43:38 IST 2023
  */
 
-package org.example;
+package org.fakhri;
 
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -17,7 +17,6 @@ public class GasketsIndex extends JPanel {
     private JPanel bottomOutputPanel;
     private JLabel materialDimLabel;
     private JLabel materialNameLabel;
-    private JComboBox mNameList;
     private JComboBox mDimList;
     private JLabel classLabel;
     private JComboBox classList;
