@@ -7,30 +7,10 @@
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="e2ff1" layout-manager="GridBagLayout">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="0" right="10" weightx="0.2" weighty="0.3"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="11095" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="2" indent="0" use-parent-layout="false"/>
-              <gridbag top="0" left="0" bottom="0" right="10" weightx="0.2" weighty="0.3"/>
-            </constraints>
-            <properties>
-              <labelFor value="bcae5"/>
-              <text value="Material Dimension"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <grid id="84f23" layout-manager="GridBagLayout">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.8" weighty="0.3"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.8" weighty="0.6"/>
         </constraints>
         <properties/>
         <border type="none"/>
@@ -46,30 +26,10 @@
           </component>
         </children>
       </grid>
-      <grid id="e3455" layout-manager="GridBagLayout">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag top="0" left="0" bottom="0" right="10" weightx="0.2" weighty="0.3"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="6b83e" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
-              <gridbag top="0" left="0" bottom="0" right="10" weightx="0.2" weighty="0.3"/>
-            </constraints>
-            <properties>
-              <labelFor value="b364b"/>
-              <text value="Material Names"/>
-            </properties>
-          </component>
-        </children>
-      </grid>
       <grid id="38d0d" layout-manager="GridBagLayout">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.8" weighty="0.3"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.8" weighty="0.6"/>
         </constraints>
         <properties/>
         <border type="none"/>
@@ -80,25 +40,6 @@
               <gridbag weightx="0.8" weighty="0.3"/>
             </constraints>
             <properties/>
-          </component>
-        </children>
-      </grid>
-      <grid id="d22de" layout-manager="GridBagLayout">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.1"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="267fe" class="javax.swing.JLabel">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.0" weighty="0.1"/>
-            </constraints>
-            <properties>
-              <text value="Material Details"/>
-            </properties>
           </component>
         </children>
       </grid>
