@@ -11,5 +11,5 @@ import lombok.ToString;
 @Builder
 public class Material {
     private String name;
-    private float width, height;
+    private double width, height;
 }

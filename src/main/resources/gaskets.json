@@ -1,0 +1,1297 @@
+[
+  {
+    "class": "ASME B16.21 Class 150",
+    "types": [
+      {
+        "name": "RF",
+        "dimensions": [
+          {
+            "size": "1/2",
+            "outer_diameter": 48,
+            "inner_diameter": 21
+          },
+          {
+            "size": "1/4",
+            "outer_diameter": 57,
+            "inner_diameter": 27
+          },
+          {
+            "size": "1",
+            "outer_diameter": 67,
+            "inner_diameter": 33
+          },
+          {
+            "size": "1 1/4",
+            "outer_diameter": 76,
+            "inner_diameter": 42
+          },
+          {
+            "size": "1 1/2",
+            "outer_diameter": 86,
+            "inner_diameter": 48
+          },
+          {
+            "size": "2",
+            "outer_diameter": 105,
+            "inner_diameter": 60
+          },
+          {
+            "size": "2 1/2",
+            "outer_diameter": 124,
+            "inner_diameter": 73
+          },
+          {
+            "size": "3",
+            "outer_diameter": 137,
+            "inner_diameter": 89
+          },
+          {
+            "size": "3 1/2",
+            "outer_diameter": 162,
+            "inner_diameter": 102
+          },
+          {
+            "size": "4",
+            "outer_diameter": 175,
+            "inner_diameter": 114
+          },
+          {
+            "size": "5",
+            "outer_diameter": 197,
+            "inner_diameter": 141
+          },
+          {
+            "size": "6",
+            "outer_diameter": 222,
+            "inner_diameter": 168
+          },
+          {
+            "size": "8",
+            "outer_diameter": 279,
+            "inner_diameter": 219
+          },
+          {
+            "size": "10",
+            "outer_diameter": 340,
+            "inner_diameter": 273
+          },
+          {
+            "size": "12",
+            "outer_diameter": 410,
+            "inner_diameter": 324
+          },
+          {
+            "size": "14",
+            "outer_diameter": 451,
+            "inner_diameter": 356
+          },
+          {
+            "size": "16",
+            "outer_diameter": 514,
+            "inner_diameter": 406
+          },
+          {
+            "size": "18",
+            "outer_diameter": 549,
+            "inner_diameter": 457
+          },
+          {
+            "size": "20",
+            "outer_diameter": 606,
+            "inner_diameter": 508
+          },
+          {
+            "size": "24",
+            "outer_diameter": 718,
+            "inner_diameter": 610
+          }
+        ]
+      },
+      {
+        "name": "FF",
+        "dimensions": [
+          {
+            "size": "1/2",
+            "outer_diameter": 89,
+            "inner_diameter": 21
+          },
+          {
+            "size": "1/4",
+            "outer_diameter": 95,
+            "inner_diameter": 27
+          },
+          {
+            "size": "1",
+            "outer_diameter": 108,
+            "inner_diameter": 33
+          },
+          {
+            "size": "1 1/4",
+            "outer_diameter": 117,
+            "inner_diameter": 42
+          },
+          {
+            "size": "1 1/2",
+            "outer_diameter": 127,
+            "inner_diameter": 48
+          },
+          {
+            "size": "2",
+            "outer_diameter": 152,
+            "inner_diameter": 60
+          },
+          {
+            "size": "2 1/2",
+            "outer_diameter": 178,
+            "inner_diameter": 73
+          },
+          {
+            "size": "3",
+            "outer_diameter": 191,
+            "inner_diameter": 89
+          },
+          {
+            "size": "3 1/2",
+            "outer_diameter": 216,
+            "inner_diameter": 102
+          },
+          {
+            "size": "4",
+            "outer_diameter": 229,
+            "inner_diameter": 114
+          },
+          {
+            "size": "5",
+            "outer_diameter": 254,
+            "inner_diameter": 141
+          },
+          {
+            "size": "6",
+            "outer_diameter": 279,
+            "inner_diameter": 168
+          },
+          {
+            "size": "8",
+            "outer_diameter": 343,
+            "inner_diameter": 219
+          },
+          {
+            "size": "10",
+            "outer_diameter": 406,
+            "inner_diameter": 273
+          },
+          {
+            "size": "12",
+            "outer_diameter": 483,
+            "inner_diameter": 324
+          },
+          {
+            "size": "14",
+            "outer_diameter": 533,
+            "inner_diameter": 356
+          },
+          {
+            "size": "16",
+            "outer_diameter": 597,
+            "inner_diameter": 406
+          },
+          {
+            "size": "18",
+            "outer_diameter": 635,
+            "inner_diameter": 457
+          },
+          {
+            "size": "20",
+            "outer_diameter": 699,
+            "inner_diameter": 508
+          },
+          {
+            "size": "24",
+            "outer_diameter": 813,
+            "inner_diameter": 610
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "ASME B16.21 Class 300",
+    "types": [
+      {
+        "name": "RF",
+        "dimensions": [
+          {
+            "size": "1/2",
+            "outer_diameter": 54,
+            "inner_diameter": 21
+          },
+          {
+            "size": "3/4",
+            "outer_diameter": 67,
+            "inner_diameter": 27
+          },
+          {
+            "size": "1",
+            "outer_diameter": 73,
+            "inner_diameter": 33
+          },
+          {
+            "size": "1 1/4",
+            "outer_diameter": 83,
+            "inner_diameter": 42
+          },
+          {
+            "size": "1 1/2",
+            "outer_diameter": 95,
+            "inner_diameter": 48
+          },
+          {
+            "size": "2",
+            "outer_diameter": 111,
+            "inner_diameter": 60
+          },
+          {
+            "size": "2 1/2",
+            "outer_diameter": 130,
+            "inner_diameter": 73
+          },
+          {
+            "size": "3",
+            "outer_diameter": 149,
+            "inner_diameter": 89
+          },
+          {
+            "size": "3 1/2",
+            "outer_diameter": 165,
+            "inner_diameter": 102
+          },
+          {
+            "size": "4",
+            "outer_diameter": 181,
+            "inner_diameter": 114
+          },
+          {
+            "size": "5",
+            "outer_diameter": 216,
+            "inner_diameter": 141
+          },
+          {
+            "size": "6",
+            "outer_diameter": 251,
+            "inner_diameter": 168
+          },
+          {
+            "size": "8",
+            "outer_diameter": 308,
+            "inner_diameter": 219
+          },
+          {
+            "size": "10",
+            "outer_diameter": 362,
+            "inner_diameter": 273
+          },
+          {
+            "size": "12",
+            "outer_diameter": 422,
+            "inner_diameter": 324
+          },
+          {
+            "size": "14",
+            "outer_diameter": 486,
+            "inner_diameter": 356
+          },
+          {
+            "size": "16",
+            "outer_diameter": 540,
+            "inner_diameter": 406
+          },
+          {
+            "size": "18",
+            "outer_diameter": 597,
+            "inner_diameter": 457
+          },
+          {
+            "size": "20",
+            "outer_diameter": 654,
+            "inner_diameter": 508
+          },
+          {
+            "size": "24",
+            "outer_diameter": 775,
+            "inner_diameter": 610
+          }
+        ]
+      },
+      {
+        "name": "FF",
+        "dimensions": [
+          {
+            "size": "1/2",
+            "outer_diameter": 95,
+            "inner_diameter": 21
+          },
+          {
+            "size": "3/4",
+            "outer_diameter": 117,
+            "inner_diameter": 27
+          },
+          {
+            "size": "1",
+            "outer_diameter": 124,
+            "inner_diameter": 33
+          },
+          {
+            "size": "1 1/4",
+            "outer_diameter": 133,
+            "inner_diameter": 42
+          },
+          {
+            "size": "1 1/2",
+            "outer_diameter": 156,
+            "inner_diameter": 48
+          },
+          {
+            "size": "2",
+            "outer_diameter": 165,
+            "inner_diameter": 60
+          },
+          {
+            "size": "2 1/2",
+            "outer_diameter": 191,
+            "inner_diameter": 73
+          },
+          {
+            "size": "3",
+            "outer_diameter": 210,
+            "inner_diameter": 89
+          },
+          {
+            "size": "3 1/2",
+            "outer_diameter": 229,
+            "inner_diameter": 102
+          },
+          {
+            "size": "4",
+            "outer_diameter": 254,
+            "inner_diameter": 114
+          },
+          {
+            "size": "5",
+            "outer_diameter": 279,
+            "inner_diameter": 141
+          },
+          {
+            "size": "6",
+            "outer_diameter": 318,
+            "inner_diameter": 168
+          },
+          {
+            "size": "8",
+            "outer_diameter": 381,
+            "inner_diameter": 219
+          },
+          {
+            "size": "10",
+            "outer_diameter": 445,
+            "inner_diameter": 273
+          },
+          {
+            "size": "12",
+            "outer_diameter": 521,
+            "inner_diameter": 324
+          },
+          {
+            "size": "14",
+            "outer_diameter": 584,
+            "inner_diameter": 356
+          },
+          {
+            "size": "16",
+            "outer_diameter": 648,
+            "inner_diameter": 406
+          },
+          {
+            "size": "18",
+            "outer_diameter": 711,
+            "inner_diameter": 457
+          },
+          {
+            "size": "20",
+            "outer_diameter": 775,
+            "inner_diameter": 508
+          },
+          {
+            "size": "24",
+            "outer_diameter": 914,
+            "inner_diameter": 610
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "ASME B16.21 Class 600",
+    "types": [
+      {
+        "name": "RF",
+        "dimensions": [
+          {
+            "size": "1/2",
+            "outer_diameter": 54,
+            "inner_diameter": 21
+          },
+          {
+            "size": "3/4",
+            "outer_diameter": 67,
+            "inner_diameter": 27
+          },
+          {
+            "size": "1",
+            "outer_diameter": 73,
+            "inner_diameter": 33
+          },
+          {
+            "size": "1 1/4",
+            "outer_diameter": 83,
+            "inner_diameter": 42
+          },
+          {
+            "size": "1 1/2",
+            "outer_diameter": 95,
+            "inner_diameter": 48
+          },
+          {
+            "size": "2",
+            "outer_diameter": 111,
+            "inner_diameter": 60
+          },
+          {
+            "size": "2 1/2",
+            "outer_diameter": 130,
+            "inner_diameter": 73
+          },
+          {
+            "size": "3",
+            "outer_diameter": 149,
+            "inner_diameter": 89
+          },
+          {
+            "size": "3 1/2",
+            "outer_diameter": 162,
+            "inner_diameter": 102
+          },
+          {
+            "size": "4",
+            "outer_diameter": 194,
+            "inner_diameter": 114
+          },
+          {
+            "size": "5",
+            "outer_diameter": 241,
+            "inner_diameter": 141
+          },
+          {
+            "size": "6",
+            "outer_diameter": 267,
+            "inner_diameter": 168
+          },
+          {
+            "size": "8",
+            "outer_diameter": 321,
+            "inner_diameter": 219
+          },
+          {
+            "size": "10",
+            "outer_diameter": 400,
+            "inner_diameter": 273
+          },
+          {
+            "size": "12",
+            "outer_diameter": 457,
+            "inner_diameter": 324
+          },
+          {
+            "size": "14",
+            "outer_diameter": 492,
+            "inner_diameter": 356
+          },
+          {
+            "size": "16",
+            "outer_diameter": 565,
+            "inner_diameter": 406
+          },
+          {
+            "size": "18",
+            "outer_diameter": 613,
+            "inner_diameter": 457
+          },
+          {
+            "size": "20",
+            "outer_diameter": 683,
+            "inner_diameter": 508
+          },
+          {
+            "size": "24",
+            "outer_diameter": 791,
+            "inner_diameter": 610
+          }
+        ]
+      },
+      {
+        "name": "FF",
+        "dimensions": [
+          {
+            "size": "1/2",
+            "outer_diameter": 95,
+            "inner_diameter": 21
+          },
+          {
+            "size": "3/4",
+            "outer_diameter": 117,
+            "inner_diameter": 27
+          },
+          {
+            "size": "1",
+            "outer_diameter": 124,
+            "inner_diameter": 33
+          },
+          {
+            "size": "1 1/4",
+            "outer_diameter": 133,
+            "inner_diameter": 42
+          },
+          {
+            "size": "1 1/2",
+            "outer_diameter": 156,
+            "inner_diameter": 48
+          },
+          {
+            "size": "2",
+            "outer_diameter": 165,
+            "inner_diameter": 60
+          },
+          {
+            "size": "2 1/2",
+            "outer_diameter": 191,
+            "inner_diameter": 73
+          },
+          {
+            "size": "3",
+            "outer_diameter": 210,
+            "inner_diameter": 89
+          },
+          {
+            "size": "3 1/2",
+            "outer_diameter": 229,
+            "inner_diameter": 102
+          },
+          {
+            "size": "4",
+            "outer_diameter": 273,
+            "inner_diameter": 114
+          },
+          {
+            "size": "5",
+            "outer_diameter": 330,
+            "inner_diameter": 141
+          },
+          {
+            "size": "6",
+            "outer_diameter": 356,
+            "inner_diameter": 168
+          },
+          {
+            "size": "8",
+            "outer_diameter": 419,
+            "inner_diameter": 219
+          },
+          {
+            "size": "10",
+            "outer_diameter": 508,
+            "inner_diameter": 273
+          },
+          {
+            "size": "12",
+            "outer_diameter": 559,
+            "inner_diameter": 324
+          },
+          {
+            "size": "14",
+            "outer_diameter": 603,
+            "inner_diameter": 356
+          },
+          {
+            "size": "16",
+            "outer_diameter": 686,
+            "inner_diameter": 406
+          },
+          {
+            "size": "18",
+            "outer_diameter": 743,
+            "inner_diameter": 457
+          },
+          {
+            "size": "20",
+            "outer_diameter": 813,
+            "inner_diameter": 508
+          },
+          {
+            "size": "24",
+            "outer_diameter": 940,
+            "inner_diameter": 610
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "PN10",
+    "types": [
+      {
+        "name": "RF",
+        "dimensions": [
+          {
+            "size": "10",
+            "outer_diameter": 45,
+            "inner_diameter": 18
+          },
+          {
+            "size": "15",
+            "outer_diameter": 50,
+            "inner_diameter": 22
+          },
+          {
+            "size": "20",
+            "outer_diameter": 60,
+            "inner_diameter": 28
+          },
+          {
+            "size": "25",
+            "outer_diameter": 70,
+            "inner_diameter": 35
+          },
+          {
+            "size": "32",
+            "outer_diameter": 82,
+            "inner_diameter": 43
+          },
+          {
+            "size": "40",
+            "outer_diameter": 92,
+            "inner_diameter": 4
+          },
+          {
+            "size": "50",
+            "outer_diameter": 107,
+            "inner_diameter": 61
+          },
+          {
+            "size": "65",
+            "outer_diameter": 127,
+            "inner_diameter": 77
+          },
+          {
+            "size": "80",
+            "outer_diameter": 142,
+            "inner_diameter": 90
+          },
+          {
+            "size": "100",
+            "outer_diameter": 162,
+            "inner_diameter": 115
+          },
+          {
+            "size": "125",
+            "outer_diameter": 192,
+            "inner_diameter": 141
+          },
+          {
+            "size": "150",
+            "outer_diameter": 218,
+            "inner_diameter": 169
+          },
+          {
+            "size": "200",
+            "outer_diameter": 273,
+            "inner_diameter": 220
+          },
+          {
+            "size": "250",
+            "outer_diameter": 328,
+            "inner_diameter": 274
+          },
+          {
+            "size": "300",
+            "outer_diameter": 378,
+            "inner_diameter": 325
+          },
+          {
+            "size": "350",
+            "outer_diameter": 438,
+            "inner_diameter": 356
+          },
+          {
+            "size": "400",
+            "outer_diameter": 489,
+            "inner_diameter": 407
+          },
+          {
+            "size": "450",
+            "outer_diameter": 539,
+            "inner_diameter": 458
+          },
+          {
+            "size": "500",
+            "outer_diameter": 594,
+            "inner_diameter": 508
+          },
+          {
+            "size": "600",
+            "outer_diameter": 695,
+            "inner_diameter": 610
+          },
+          {
+            "size": "700",
+            "outer_diameter": 810,
+            "inner_diameter": 712
+          },
+          {
+            "size": "800",
+            "outer_diameter": 917,
+            "inner_diameter": 813
+          },
+          {
+            "size": "900",
+            "outer_diameter": 1017,
+            "inner_diameter": 915
+          },
+          {
+            "size": "1000",
+            "outer_diameter": 1124,
+            "inner_diameter": 1016
+          },
+          {
+            "size": "1100",
+            "outer_diameter": 1231,
+            "inner_diameter": 1120
+          },
+          {
+            "size": "1200",
+            "outer_diameter": 1341,
+            "inner_diameter": 1220
+          },
+          {
+            "size": "1400",
+            "outer_diameter": 1548,
+            "inner_diameter": 1420
+          },
+          {
+            "size": "1500",
+            "outer_diameter": 1658,
+            "inner_diameter": 1520
+          },
+          {
+            "size": "1600",
+            "outer_diameter": 1772,
+            "inner_diameter": 1620
+          },
+          {
+            "size": "1800",
+            "outer_diameter": 1972,
+            "inner_diameter": 1820
+          },
+          {
+            "size": "2000",
+            "outer_diameter": 2182,
+            "inner_diameter": 2020
+          }
+        ]
+      },
+      {
+        "name": "FF",
+        "dimensions": [
+          {
+            "size": "10",
+            "outer_diameter": 90,
+            "inner_diameter": 18
+          },
+          {
+            "size": "15",
+            "outer_diameter": 95,
+            "inner_diameter": 22
+          },
+          {
+            "size": "20",
+            "outer_diameter": 105,
+            "inner_diameter": 28
+          },
+          {
+            "size": "25",
+            "outer_diameter": 115,
+            "inner_diameter": 35
+          },
+          {
+            "size": "32",
+            "outer_diameter": 140,
+            "inner_diameter": 43
+          },
+          {
+            "size": "40",
+            "outer_diameter": 150,
+            "inner_diameter": 49
+          },
+          {
+            "size": "50",
+            "outer_diameter": 165,
+            "inner_diameter": 61
+          },
+          {
+            "size": "65",
+            "outer_diameter": 185,
+            "inner_diameter": 77
+          },
+          {
+            "size": "80",
+            "outer_diameter": 200,
+            "inner_diameter": 90
+          },
+          {
+            "size": "100",
+            "outer_diameter": 220,
+            "inner_diameter": 115
+          },
+          {
+            "size": "125",
+            "outer_diameter": 250,
+            "inner_diameter": 141
+          },
+          {
+            "size": "150",
+            "outer_diameter": 285,
+            "inner_diameter": 169
+          },
+          {
+            "size": "200",
+            "outer_diameter": 340,
+            "inner_diameter": 220
+          },
+          {
+            "size": "250",
+            "outer_diameter": 395,
+            "inner_diameter": 274
+          },
+          {
+            "size": "300",
+            "outer_diameter": 445,
+            "inner_diameter": 325
+          },
+          {
+            "size": "350",
+            "outer_diameter": 505,
+            "inner_diameter": 356
+          },
+          {
+            "size": "400",
+            "outer_diameter": 565,
+            "inner_diameter": 407
+          },
+          {
+            "size": "450",
+            "outer_diameter": 615,
+            "inner_diameter": 458
+          },
+          {
+            "size": "500",
+            "outer_diameter": 670,
+            "inner_diameter": 508
+          },
+          {
+            "size": "600",
+            "outer_diameter": 780,
+            "inner_diameter": 610
+          },
+          {
+            "size": "700",
+            "outer_diameter": 895,
+            "inner_diameter": 712
+          },
+          {
+            "size": "800",
+            "outer_diameter": 1015,
+            "inner_diameter": 813
+          },
+          {
+            "size": "900",
+            "outer_diameter": 1115,
+            "inner_diameter": 915
+          },
+          {
+            "size": "1000",
+            "outer_diameter": 1230,
+            "inner_diameter": 1016
+          },
+          {
+            "size": "1100",
+            "outer_diameter": 1340,
+            "inner_diameter": 1120
+          },
+          {
+            "size": "1200",
+            "outer_diameter": 1455,
+            "inner_diameter": 1220
+          },
+          {
+            "size": "1400",
+            "outer_diameter": 1675,
+            "inner_diameter": 1420
+          },
+          {
+            "size": "1500",
+            "outer_diameter": 1785,
+            "inner_diameter": 1520
+          },
+          {
+            "size": "1600",
+            "outer_diameter": 1915,
+            "inner_diameter": 1620
+          },
+          {
+            "size": "1800",
+            "outer_diameter": 2115,
+            "inner_diameter": 1820
+          },
+          {
+            "size": "2000",
+            "outer_diameter": 2325,
+            "inner_diameter": 2020
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "PN16",
+    "types": [
+      {
+        "name": "RF",
+        "dimensions": [
+          {
+            "size": "10",
+            "outer_diameter": 45,
+            "inner_diameter": 18
+          },
+          {
+            "size": "15",
+            "outer_diameter": 50,
+            "inner_diameter": 22
+          },
+          {
+            "size": "20",
+            "outer_diameter": 60,
+            "inner_diameter": 28
+          },
+          {
+            "size": "25",
+            "outer_diameter": 70,
+            "inner_diameter": 35
+          },
+          {
+            "size": "32",
+            "outer_diameter": 82,
+            "inner_diameter": 43
+          },
+          {
+            "size": "40",
+            "outer_diameter": 92,
+            "inner_diameter": 49
+          },
+          {
+            "size": "50",
+            "outer_diameter": 107,
+            "inner_diameter": 61
+          },
+          {
+            "size": "65",
+            "outer_diameter": 127,
+            "inner_diameter": 77
+          },
+          {
+            "size": "80",
+            "outer_diameter": 142,
+            "inner_diameter": 90
+          },
+          {
+            "size": "100",
+            "outer_diameter": 162,
+            "inner_diameter": 115
+          },
+          {
+            "size": "125",
+            "outer_diameter": 192,
+            "inner_diameter": 141
+          },
+          {
+            "size": "150",
+            "outer_diameter": 218,
+            "inner_diameter": 169
+          },
+          {
+            "size": "200",
+            "outer_diameter": 273,
+            "inner_diameter": 220
+          },
+          {
+            "size": "250",
+            "outer_diameter": 329,
+            "inner_diameter": 274
+          },
+          {
+            "size": "300",
+            "outer_diameter": 384,
+            "inner_diameter": 325
+          },
+          {
+            "size": "350",
+            "outer_diameter": 444,
+            "inner_diameter": 356
+          },
+          {
+            "size": "400",
+            "outer_diameter": 495,
+            "inner_diameter": 407
+          },
+          {
+            "size": "450",
+            "outer_diameter": 555,
+            "inner_diameter": 458
+          },
+          {
+            "size": "500",
+            "outer_diameter": 617,
+            "inner_diameter": 508
+          },
+          {
+            "size": "600",
+            "outer_diameter": 734,
+            "inner_diameter": 610
+          },
+          {
+            "size": "700",
+            "outer_diameter": 804,
+            "inner_diameter": 712
+          },
+          {
+            "size": "800",
+            "outer_diameter": 911,
+            "inner_diameter": 813
+          },
+          {
+            "size": "900",
+            "outer_diameter": 1011,
+            "inner_diameter": 915
+          },
+          {
+            "size": "1000",
+            "outer_diameter": 1128,
+            "inner_diameter": 1016
+          },
+          {
+            "size": "1100",
+            "outer_diameter": 1228,
+            "inner_diameter": 1120
+          },
+          {
+            "size": "1200",
+            "outer_diameter": 1342,
+            "inner_diameter": 1220
+          },
+          {
+            "size": "1400",
+            "outer_diameter": 1542,
+            "inner_diameter": 1420
+          },
+          {
+            "size": "1500",
+            "outer_diameter": 1654,
+            "inner_diameter": 1520
+          },
+          {
+            "size": "1600",
+            "outer_diameter": 1764,
+            "inner_diameter": 1620
+          },
+          {
+            "size": "1800",
+            "outer_diameter": 1964,
+            "inner_diameter": 1820
+          },
+          {
+            "size": "2000",
+            "outer_diameter": 2168,
+            "inner_diameter": 2020
+          }
+        ]
+      },
+      {
+        "name": "FF",
+        "dimensions": [
+          {
+            "size": "10",
+            "outer_diameter": 90,
+            "inner_diameter": 18
+          },
+          {
+            "size": "15",
+            "outer_diameter": 95,
+            "inner_diameter": 22
+          },
+          {
+            "size": "20",
+            "outer_diameter": 105,
+            "inner_diameter": 28
+          },
+          {
+            "size": "25",
+            "outer_diameter": 115,
+            "inner_diameter": 35
+          },
+          {
+            "size": "32",
+            "outer_diameter": 140,
+            "inner_diameter": 43
+          },
+          {
+            "size": "40",
+            "outer_diameter": 150,
+            "inner_diameter": 49
+          },
+          {
+            "size": "50",
+            "outer_diameter": 165,
+            "inner_diameter": 61
+          },
+          {
+            "size": "65",
+            "outer_diameter": 185,
+            "inner_diameter": 77
+          },
+          {
+            "size": "80",
+            "outer_diameter": 200,
+            "inner_diameter": 90
+          },
+          {
+            "size": "100",
+            "outer_diameter": 220,
+            "inner_diameter": 115
+          },
+          {
+            "size": "125",
+            "outer_diameter": 250,
+            "inner_diameter": 141
+          },
+          {
+            "size": "150",
+            "outer_diameter": 285,
+            "inner_diameter": 169
+          },
+          {
+            "size": "200",
+            "outer_diameter": 340,
+            "inner_diameter": 220
+          },
+          {
+            "size": "250",
+            "outer_diameter": 405,
+            "inner_diameter": 274
+          },
+          {
+            "size": "300",
+            "outer_diameter": 460,
+            "inner_diameter": 325
+          },
+          {
+            "size": "350",
+            "outer_diameter": 520,
+            "inner_diameter": 356
+          },
+          {
+            "size": "400",
+            "outer_diameter": 580,
+            "inner_diameter": 407
+          },
+          {
+            "size": "450",
+            "outer_diameter": 640,
+            "inner_diameter": 458
+          },
+          {
+            "size": "500",
+            "outer_diameter": 715,
+            "inner_diameter": 508
+          },
+          {
+            "size": "600",
+            "outer_diameter": 840,
+            "inner_diameter": 610
+          },
+          {
+            "size": "700",
+            "outer_diameter": 910,
+            "inner_diameter": 712
+          },
+          {
+            "size": "800",
+            "outer_diameter": 1025,
+            "inner_diameter": 813
+          },
+          {
+            "size": "900",
+            "outer_diameter": 1125,
+            "inner_diameter": 915
+          },
+          {
+            "size": "1000",
+            "outer_diameter": 1255,
+            "inner_diameter": 1016
+          },
+          {
+            "size": "1100",
+            "outer_diameter": 1355,
+            "inner_diameter": 1120
+          },
+          {
+            "size": "1200",
+            "outer_diameter": 1485,
+            "inner_diameter": 1220
+          },
+          {
+            "size": "1400",
+            "outer_diameter": 1685,
+            "inner_diameter": 1420
+          },
+          {
+            "size": "1500",
+            "outer_diameter": 1820,
+            "inner_diameter": 1520
+          },
+          {
+            "size": "1600",
+            "outer_diameter": 1930,
+            "inner_diameter": 1620
+          },
+          {
+            "size": "1800",
+            "outer_diameter": 2130,
+            "inner_diameter": 1820
+          },
+          {
+            "size": "2000",
+            "outer_diameter": 2345,
+            "inner_diameter": 2020
+          }
+        ]
+      }
+    ]
+  }
+]

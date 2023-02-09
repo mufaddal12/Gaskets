@@ -18,11 +18,18 @@
           <component id="bcae5" class="javax.swing.JComboBox" binding="materialDimList">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.8" weighty="0.3"/>
+              <gridbag weightx="0.8" weighty="0.5"/>
             </constraints>
             <properties>
               <model/>
             </properties>
+          </component>
+          <component id="b6b4e" class="javax.swing.JComboBox" binding="materialUnitList">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+              <gridbag top="0" left="10" bottom="0" right="0" weightx="0.2" weighty="0.5"/>
+            </constraints>
+            <properties/>
           </component>
         </children>
       </grid>
@@ -37,7 +44,7 @@
           <component id="b364b" class="javax.swing.JComboBox" binding="materialNameList">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-              <gridbag weightx="0.8" weighty="0.3"/>
+              <gridbag weightx="1.0" weighty="0.3"/>
             </constraints>
             <properties/>
           </component>

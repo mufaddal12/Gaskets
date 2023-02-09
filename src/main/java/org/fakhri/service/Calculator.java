@@ -5,7 +5,11 @@ import org.fakhri.entity.Material;
 
 public class Calculator {
     public static int calculate(Material material, Gasket gasket) {
-//        TODO: dimensions in material and gasket are in same unit
-        return 100;
+        double width = material.getWidth();
+        double height = material.getHeight();
+        double outerDiameter = gasket.getOuterDiameter() + 25;
+        int columns = (int) (width / outerDiameter);
+        int rows = (int) (height / outerDiameter);
+        return columns * rows;
     }
 }

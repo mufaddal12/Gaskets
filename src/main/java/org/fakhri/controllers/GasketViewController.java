@@ -6,14 +6,14 @@ import org.fakhri.views.forms.GasketDetailsView;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 public class GasketViewController implements Controller {
     private GasketDetailsView gasketDetailsView;
     private GasketDao gasketDao;
 
-    public GasketViewController(GasketDetailsView gasketDetailsView) {
+    public GasketViewController(GasketDetailsView gasketDetailsView) throws IOException {
         this(gasketDetailsView, GasketDao.getInstance());
     }
 
@@ -46,6 +46,5 @@ public class GasketViewController implements Controller {
         };
         classList.addActionListener(actionListener);
         typeList.addActionListener(actionListener);
-        sizeList.addActionListener(actionListener);
     }
 }

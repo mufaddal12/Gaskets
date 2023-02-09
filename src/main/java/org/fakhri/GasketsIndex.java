@@ -1,7 +1,3 @@
-/*
- * Created by JFormDesigner on Sun Feb 05 11:43:38 IST 2023
- */
-
 package org.fakhri;
 
 import org.fakhri.controllers.SubmitController;

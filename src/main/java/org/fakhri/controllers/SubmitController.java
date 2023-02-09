@@ -8,7 +8,6 @@ import org.fakhri.views.forms.MaterialDetailsView;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
 
 public class SubmitController implements Controller{
 

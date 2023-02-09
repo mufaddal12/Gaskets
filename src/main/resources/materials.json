@@ -1,0 +1,53 @@
+[
+  {
+    "name": "Cork",
+    "dimensions": [
+      {
+        "height": 600,
+        "width": 900
+      }
+    ]
+  },
+  {
+    "name": "Teflon",
+    "dimensions": [
+      {
+        "height": 1000,
+        "width": 1000
+      },
+      {
+        "height": 1500,
+        "width": 1500
+      }
+    ]
+  },
+  {
+    "name": "CNAF",
+    "dimensions": [
+      {
+        "height": 1000,
+        "width": 1000
+      },
+      {
+        "height": 1500,
+        "width": 1500
+      },
+      {
+        "height": 1000,
+        "width": 1500
+      },
+      {
+        "height": 2000,
+        "width": 1500
+      },
+      {
+        "height": 1500,
+        "width": 2500
+      },
+      {
+        "height": 3000,
+        "width": 2000
+      }
+    ]
+  }
+]
