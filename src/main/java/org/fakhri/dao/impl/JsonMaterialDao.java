@@ -5,16 +5,20 @@ import org.fakhri.entity.Material;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class JsonMaterialDao implements MaterialDao {
-    private static String FILE_NAME = "src/main/resources/materials.json";
+    private static String FILE_NAME = "/materials.json";
 
     private static class Keys {
         public static String NAME = "name";
@@ -34,8 +38,16 @@ public class JsonMaterialDao implements MaterialDao {
     private JSONArray jsonData;
     private Map<String, Integer> materialIndices;
     public JsonMaterialDao() throws IOException {
-        this.jsonData = new JSONArray(Files.readString(Path.of(FILE_NAME)));
-        setupData();
+        try (InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            String contents = reader.lines()
+                    .collect(Collectors.joining(System.lineSeparator()));
+
+            this.jsonData = new JSONArray(contents);
+            setupData();
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     private void setupData() {
@@ -72,11 +84,4 @@ public class JsonMaterialDao implements MaterialDao {
                 .width(dimensionObject.getDouble(Keys.WIDTH))
                 .build();
     }
-
-    public static void main(String []args) throws IOException {
-        MaterialDao dao = getInstance();
-        System.out.println(dao.getAllUniqueMaterials());
-        System.out.println(dao.getMaterialsByKey("CNAF"));
-    }
-
 }

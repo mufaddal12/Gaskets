@@ -6,16 +6,20 @@ import org.fakhri.entity.GasketType;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class JsonGasketDao implements GasketDao {
-    private static String FILE_NAME = "src/main/resources/gaskets.json";
+    private static String FILE_NAME = "/gaskets.json";
 
     private static class Keys {
         public static String CLASS = "class";
@@ -38,8 +42,16 @@ public class JsonGasketDao implements GasketDao {
     private JSONArray jsonData;
     private Map<String, Integer> classIndices, typeIndices;
     public JsonGasketDao() throws IOException {
-        this.jsonData = new JSONArray(Files.readString(Path.of(FILE_NAME)));
-        setupData();
+        try (InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            String contents = reader.lines()
+                    .collect(Collectors.joining(System.lineSeparator()));
+
+            this.jsonData = new JSONArray(contents);
+            setupData();
+        } catch (Exception e) {
+            throw e;
+        }
     }
 
     private void setupData() {
@@ -88,12 +100,4 @@ public class JsonGasketDao implements GasketDao {
                 .type(gasketType)
                 .build();
     }
-
-    public static void main(String []args) throws IOException {
-        GasketDao dao = getInstance();
-        System.out.println(dao.getAllClasses());
-        System.out.println(dao.getAllByClassTypeAndSize("PN10", GasketType.FULL_FACE));
-        System.out.println(dao.getAllByClassTypeAndSize("ASME B16.21 Class 150", GasketType.RING_FACE));
-    }
-
 }
