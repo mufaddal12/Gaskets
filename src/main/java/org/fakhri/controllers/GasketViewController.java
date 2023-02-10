@@ -2,6 +2,7 @@ package org.fakhri.controllers;
 
 import org.fakhri.dao.GasketDao;
 import org.fakhri.entity.GasketType;
+import org.fakhri.views.DimensionUnit;
 import org.fakhri.views.forms.GasketDetailsView;
 
 import javax.swing.DefaultComboBoxModel;
@@ -26,23 +27,21 @@ public class GasketViewController implements Controller {
     public void addDataAndListeners() {
         JComboBox classList = gasketDetailsView.getClassList();
         JComboBox typeList = gasketDetailsView.getTypeList();
-        JComboBox sizeList = gasketDetailsView.getSizeList();
 
         classList.setModel(new DefaultComboBoxModel(gasketDao.getAllClasses().toArray()));
         typeList.setModel(new DefaultComboBoxModel(GasketType.values()));
 
-        String gasketClass = (String) gasketDetailsView.getClassList().getSelectedItem();
-        GasketType gasketType = (GasketType) gasketDetailsView.getTypeList().getSelectedItem();
+        String gasketClass = (String) classList.getSelectedItem();
+        GasketType gasketType = (GasketType) typeList.getSelectedItem();
 
-        sizeList.setModel(new DefaultComboBoxModel(gasketDao.getAllByClassTypeAndSize(
-                gasketClass, gasketType).toArray()));
+        gasketDetailsView.setSelectableItems(gasketDao.getAllByClassTypeAndSize(gasketClass, gasketType));
+        gasketDetailsView.setUnit(DimensionUnit.MM);
 
         ActionListener actionListener = e -> {
             String gasketClass1 = (String) gasketDetailsView.getClassList().getSelectedItem();
             GasketType gasketType1 = (GasketType) gasketDetailsView.getTypeList().getSelectedItem();
 
-            gasketDetailsView.setSelectableItems(gasketDao.getAllByClassTypeAndSize(
-                    gasketClass1, gasketType1));
+            gasketDetailsView.setSelectableItems(gasketDao.getAllByClassTypeAndSize(gasketClass1, gasketType1));
         };
         classList.addActionListener(actionListener);
         typeList.addActionListener(actionListener);

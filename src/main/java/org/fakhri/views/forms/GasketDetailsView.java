@@ -68,10 +68,6 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
     public JComboBox getTypeList() {
         return typeList;
     }
-
-    public JComboBox getSizeList() {
-        return sizeList;
-    }
 }
 
 class GasketRenderer extends DefaultListCellRenderer {
