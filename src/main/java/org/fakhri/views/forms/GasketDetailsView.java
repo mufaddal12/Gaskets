@@ -1,9 +1,8 @@
 package org.fakhri.views.forms;
 
-
 import org.fakhri.controllers.Controller;
 import org.fakhri.controllers.GasketViewController;
-import org.fakhri.controllers.UnitChangeController;
+import org.fakhri.controllers.UnitViewController;
 import org.fakhri.entity.Gasket;
 import org.fakhri.views.DetailsView;
 import org.fakhri.views.DimensionUnit;
@@ -26,13 +25,11 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
     private JComboBox gasketUnitList;
 
     private Controller gasketViewController;
-    private Controller unitChangeController;
+    private UnitViewController unitViewController;
 
     public GasketDetailsView() throws IOException {
-        this.gasketViewController = new GasketViewController(this);
-        this.unitChangeController = new UnitChangeController(this);
-
-        setControllers();
+        setDetailsViewController(new GasketViewController(this));
+        setUnitViewController(new UnitViewController(this));
     }
 
     @Override
@@ -46,6 +43,12 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
     }
 
     @Override
+    public void setDetailsViewController(Controller detailsViewController) {
+        this.gasketViewController = detailsViewController;
+        this.gasketViewController.addDataAndListeners();
+    }
+
+    @Override
     public void setUnit(DimensionUnit unit) {
         sizeList.setRenderer(new GasketRenderer(unit));
     }
@@ -56,9 +59,9 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
     }
 
     @Override
-    public void setControllers() {
-        this.gasketViewController.addDataAndListeners();
-        this.unitChangeController.addDataAndListeners();
+    public void setUnitViewController(UnitViewController unitViewController) {
+        this.unitViewController = unitViewController;
+        this.unitViewController.addDataAndListeners();
     }
 
     public JComboBox getClassList() {

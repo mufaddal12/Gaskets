@@ -3,7 +3,7 @@ package org.fakhri.views.forms;
 
 import org.fakhri.controllers.Controller;
 import org.fakhri.controllers.MaterialViewController;
-import org.fakhri.controllers.UnitChangeController;
+import org.fakhri.controllers.UnitViewController;
 import org.fakhri.entity.Material;
 import org.fakhri.views.DetailsView;
 import org.fakhri.views.DimensionUnit;
@@ -25,12 +25,11 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
     private JComboBox materialUnitList;
 
     private Controller materialViewController;
-    private Controller unitChangeController;
+    private UnitViewController unitViewController;
 
     public MaterialDetailsView() throws IOException {
-        this.materialViewController =  new MaterialViewController(this);
-        this.unitChangeController = new UnitChangeController(this);
-        setControllers();
+        setDetailsViewController(new MaterialViewController(this));
+        setUnitViewController(new UnitViewController(this));
     }
     @Override
     public Material getSelectedItem() {
@@ -42,8 +41,10 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
         materialDimList.setModel(new DefaultComboBoxModel(gaskets.toArray()));
     }
 
-    public void setController(Controller controller) {
-        this.materialViewController = controller;
+    @Override
+    public void setDetailsViewController(Controller detailsViewController) {
+        this.materialViewController = detailsViewController;
+        this.materialViewController.addDataAndListeners();
     }
 
     @Override
@@ -55,11 +56,10 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
     public JComboBox getUnitList() { return materialUnitList; }
 
     @Override
-    public void setControllers() {
-        this.materialViewController.addDataAndListeners();
-        this.unitChangeController.addDataAndListeners();
+    public void setUnitViewController(UnitViewController unitViewController) {
+        this.unitViewController = unitViewController;
+        this.unitViewController.addDataAndListeners();;
     }
-
 
     public JComboBox getMaterialNameList() {
         return materialNameList;

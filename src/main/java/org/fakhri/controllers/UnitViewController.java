@@ -6,11 +6,11 @@ import org.fakhri.views.DimensionUnitView;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 
-public class UnitChangeController implements Controller {
+public class UnitViewController implements Controller {
 
     private DimensionUnitView dimensionUnitView;
 
-    public UnitChangeController(DimensionUnitView dimensionUnitView) {
+    public UnitViewController(DimensionUnitView dimensionUnitView) {
         this.dimensionUnitView = dimensionUnitView;
     }
 
