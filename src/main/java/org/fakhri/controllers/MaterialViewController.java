@@ -29,12 +29,12 @@ public class MaterialViewController implements Controller {
         List<String> uniqueMaterials = materialDao.getAllUniqueMaterials();
         materialNameList.setModel(new DefaultComboBoxModel(uniqueMaterials.toArray()));
 
-        materialDetailsView.setSelectableItems(materialDao.getMaterialsByKey(uniqueMaterials.get(0)));
+        materialDetailsView.setSelectableItems(materialDao.getMaterialsByName(uniqueMaterials.get(0)));
         materialDetailsView.setUnit(DimensionUnit.MM);
 
         materialNameList.addActionListener(e -> {
             String selectedMaterial = (String) materialDetailsView.getMaterialNameList().getSelectedItem();
-            materialDetailsView.setSelectableItems(materialDao.getMaterialsByKey(selectedMaterial));
+            materialDetailsView.setSelectableItems(materialDao.getMaterialsByName(selectedMaterial));
         });
     }
 

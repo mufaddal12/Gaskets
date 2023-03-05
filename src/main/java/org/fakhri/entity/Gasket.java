@@ -10,7 +10,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Gasket {
-    private String gClass;
+    private String gasketClass;
     private String size;
     private GasketType type;
     private double innerDiameter, outerDiameter;

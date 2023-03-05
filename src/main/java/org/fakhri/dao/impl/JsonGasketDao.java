@@ -10,8 +10,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -96,7 +94,7 @@ public class JsonGasketDao implements GasketDao {
                 .size(dimensionObject.getString(Keys.SIZE))
                 .innerDiameter(dimensionObject.getDouble(Keys.INNER_DIAMETER))
                 .outerDiameter(dimensionObject.getDouble(Keys.OUTER_DIAMETER))
-                .gClass(gasketClass)
+                .gasketClass(gasketClass)
                 .type(gasketType)
                 .build();
     }

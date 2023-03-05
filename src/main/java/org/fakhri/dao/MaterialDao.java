@@ -11,5 +11,5 @@ public interface MaterialDao {
         return JsonMaterialDao.getInstance();
     }
     List<String> getAllUniqueMaterials();
-    List<Material> getMaterialsByKey(String key);
+    List<Material> getMaterialsByName(String key);
 }

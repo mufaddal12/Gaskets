@@ -1,5 +1,8 @@
 package org.fakhri;
 
+import org.fakhri.config.DataSourceConfig;
+
+import javax.sql.DataSource;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -20,7 +23,8 @@ public class Main {
 
     public static void main(String[] args) throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        javax.swing.SwingUtilities.invokeLater(() -> {
+        DataSource ds = DataSourceConfig.getDataSourceInstance();
+            javax.swing.SwingUtilities.invokeLater(() -> {
             try {
                 createAndShowGUI();
             } catch (UnsupportedLookAndFeelException e) {
