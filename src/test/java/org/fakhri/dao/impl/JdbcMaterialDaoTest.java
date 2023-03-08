@@ -1,10 +1,11 @@
 package org.fakhri.dao.impl;
 
+import java.io.IOException;
 import java.util.List;
 
 public class JdbcMaterialDaoTest {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws IOException {
         JdbcMaterialDao dao = new JdbcMaterialDao();
         List strings = dao.getAllUniqueMaterials();
         System.out.println(strings);

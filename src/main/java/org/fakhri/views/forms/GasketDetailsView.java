@@ -24,9 +24,6 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
     private JPanel gasketDetailsPanel;
     private JComboBox gasketUnitList;
 
-    private Controller gasketViewController;
-    private UnitViewController unitViewController;
-
     public GasketDetailsView() throws IOException {
         setDetailsViewController(new GasketViewController(this));
         setUnitViewController(new UnitViewController(this));
@@ -44,8 +41,7 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
 
     @Override
     public void setDetailsViewController(Controller detailsViewController) {
-        this.gasketViewController = detailsViewController;
-        this.gasketViewController.addDataAndListeners();
+        detailsViewController.addDataAndListeners();
     }
 
     @Override
@@ -60,8 +56,7 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
 
     @Override
     public void setUnitViewController(UnitViewController unitViewController) {
-        this.unitViewController = unitViewController;
-        this.unitViewController.addDataAndListeners();
+        unitViewController.addDataAndListeners();
     }
 
     public JComboBox getClassList() {

@@ -20,9 +20,9 @@ public class UnitViewController implements Controller {
         unitList.setModel(new DefaultComboBoxModel(DimensionUnit.values()));
         dimensionUnitView.setUnit(DimensionUnit.MM);
 
-        unitList.addActionListener(e -> {
-            dimensionUnitView.setUnit((DimensionUnit) dimensionUnitView.getUnitList().getSelectedItem());
-        });
+        unitList.addActionListener(e ->
+            dimensionUnitView.setUnit((DimensionUnit) dimensionUnitView.getUnitList().getSelectedItem())
+        );
 
     }
 }

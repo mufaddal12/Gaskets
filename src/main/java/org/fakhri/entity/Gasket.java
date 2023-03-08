@@ -13,5 +13,6 @@ public class Gasket {
     private String gasketClass;
     private String size;
     private GasketType type;
-    private double innerDiameter, outerDiameter;
+    private double innerDiameter;
+    private double outerDiameter;
 }

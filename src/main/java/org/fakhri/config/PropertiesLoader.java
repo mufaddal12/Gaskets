@@ -8,18 +8,16 @@ public class PropertiesLoader {
 
     private static Properties properties;
 
-    public static Properties loadProperties() {
+    private PropertiesLoader() {}
+
+    public static Properties loadProperties() throws IOException {
         if(properties == null){
             properties = new Properties();
             InputStream inputStream = PropertiesLoader.class
-                    .getClassLoader()
-                    .getResourceAsStream("application.properties");
-            try {
-                properties.load(inputStream);
-                inputStream.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+                .getClassLoader()
+                .getResourceAsStream("application.properties");
+            properties.load(inputStream);
+            inputStream.close();
         }
         return properties;
     }

@@ -17,16 +17,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class JsonGasketDao implements GasketDao {
-    private static String FILE_NAME = "/gaskets.json";
+    private static final String FILE_NAME = "/gaskets.json";
 
     private static class Keys {
-        public static String CLASS = "class";
-        public static String TYPES = "types";
-        public static String NAME = "name";
-        public static String DIMENSIONS = "dimensions";
-        public static String SIZE = "size";
-        public static String OUTER_DIAMETER = "outer_diameter";
-        public static String INNER_DIAMETER = "inner_diameter";
+        public static final String CLASS = "class";
+        public static final String TYPES = "types";
+        public static final String NAME = "name";
+        public static final String DIMENSIONS = "dimensions";
+        public static final String SIZE = "size";
+        public static final String OUTER_DIAMETER = "outer_diameter";
+        public static final String INNER_DIAMETER = "inner_diameter";
     }
 
     private static JsonGasketDao jsonGasketDao;
@@ -38,18 +38,18 @@ public class JsonGasketDao implements GasketDao {
     }
 
     private JSONArray jsonData;
-    private Map<String, Integer> classIndices, typeIndices;
+    private Map<String, Integer> classIndices;
+    private Map<String, Integer> typeIndices;
     public JsonGasketDao() throws IOException {
-        try (InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            String contents = reader.lines()
-                    .collect(Collectors.joining(System.lineSeparator()));
+        InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        String contents = reader.lines()
+            .collect(Collectors.joining(System.lineSeparator()));
 
-            this.jsonData = new JSONArray(contents);
-            setupData();
-        } catch (Exception e) {
-            throw e;
-        }
+        reader.close();
+        inputStream.close();
+        this.jsonData = new JSONArray(contents);
+        setupData();
     }
 
     private void setupData() {

@@ -16,13 +16,13 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class JsonMaterialDao implements MaterialDao {
-    private static String FILE_NAME = "/materials.json";
+    private static final String FILE_NAME = "/materials.json";
 
     private static class Keys {
-        public static String NAME = "name";
-        public static String DIMENSIONS = "dimensions";
-        public static String HEIGHT = "height";
-        public static String WIDTH = "width";
+        public static final String NAME = "name";
+        public static final String DIMENSIONS = "dimensions";
+        public static final String HEIGHT = "height";
+        public static final String WIDTH = "width";
     }
 
     private static JsonMaterialDao jsonMaterialDao;
@@ -36,16 +36,14 @@ public class JsonMaterialDao implements MaterialDao {
     private JSONArray jsonData;
     private Map<String, Integer> materialIndices;
     public JsonMaterialDao() throws IOException {
-        try (InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
-            String contents = reader.lines()
-                    .collect(Collectors.joining(System.lineSeparator()));
-
-            this.jsonData = new JSONArray(contents);
-            setupData();
-        } catch (Exception e) {
-            throw e;
-        }
+        InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        String contents = reader.lines()
+                .collect(Collectors.joining(System.lineSeparator()));
+        reader.close();
+        inputStream.close();
+        this.jsonData = new JSONArray(contents);
+        setupData();
     }
 
     private void setupData() {
@@ -73,6 +71,11 @@ public class JsonMaterialDao implements MaterialDao {
         }
 
         return materials;
+    }
+
+    @Override
+    public Material save(Material material) {
+        return null;
     }
 
     private Material buildMaterial(JSONObject dimensionObject, String materialName) {

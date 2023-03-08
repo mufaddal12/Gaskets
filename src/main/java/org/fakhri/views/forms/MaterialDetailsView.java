@@ -21,11 +21,8 @@ import java.util.List;
 public class MaterialDetailsView implements DetailsView<Material>, DimensionUnitView {
     private JComboBox materialNameList;
     private JComboBox materialDimList;
-    private JPanel materialDetailsPanel;
     private JComboBox materialUnitList;
-
-    private Controller materialViewController;
-    private UnitViewController unitViewController;
+    private JPanel materialDetailsPanel;
 
     public MaterialDetailsView() throws IOException {
         setDetailsViewController(new MaterialViewController(this));
@@ -43,8 +40,7 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
 
     @Override
     public void setDetailsViewController(Controller detailsViewController) {
-        this.materialViewController = detailsViewController;
-        this.materialViewController.addDataAndListeners();
+        detailsViewController.addDataAndListeners();
     }
 
     @Override
@@ -57,8 +53,7 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
 
     @Override
     public void setUnitViewController(UnitViewController unitViewController) {
-        this.unitViewController = unitViewController;
-        this.unitViewController.addDataAndListeners();;
+        unitViewController.addDataAndListeners();
     }
 
     public JComboBox getMaterialNameList() {
