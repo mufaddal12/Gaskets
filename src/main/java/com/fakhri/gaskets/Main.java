@@ -44,9 +44,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-
         setup();
-
         javax.swing.SwingUtilities.invokeLater(Main::createAndShowGUI);
     }
 }
