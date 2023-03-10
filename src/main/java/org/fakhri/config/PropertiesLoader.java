@@ -10,14 +10,18 @@ public class PropertiesLoader {
 
     private PropertiesLoader() {}
 
-    public static Properties loadProperties() throws IOException {
+    public static Properties loadProperties() {
         if(properties == null){
             properties = new Properties();
             InputStream inputStream = PropertiesLoader.class
-                .getClassLoader()
-                .getResourceAsStream("application.properties");
-            properties.load(inputStream);
-            inputStream.close();
+                    .getClassLoader()
+                    .getResourceAsStream("application.properties");
+            try {
+                properties.load(inputStream);
+                inputStream.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return properties;
     }
