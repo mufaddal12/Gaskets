@@ -3,6 +3,7 @@ package com.fakhri.gaskets;
 import com.fakhri.gaskets.dao.impl.JdbcMaterialDao;
 import com.fakhri.gaskets.entity.Material;
 import com.fakhri.gaskets.dao.impl.JsonMaterialDao;
+import com.fakhri.gaskets.exceptions.ApplicationException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -19,7 +20,7 @@ public class Main {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
                  UnsupportedLookAndFeelException e) {
-            throw new RuntimeException(e);
+            throw new ApplicationException(e);
         }
 
         JFrame frame = new JFrame();
