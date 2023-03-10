@@ -1,11 +1,11 @@
 package org.fakhri.views.forms;
 
+import org.fakhri.views.DetailsView;
+import org.fakhri.views.DimensionUnit;
 import org.fakhri.controllers.Controller;
 import org.fakhri.controllers.GasketViewController;
 import org.fakhri.controllers.UnitViewController;
 import org.fakhri.entity.Gasket;
-import org.fakhri.views.DetailsView;
-import org.fakhri.views.DimensionUnit;
 import org.fakhri.views.DimensionUnitView;
 
 import javax.swing.DefaultComboBoxModel;

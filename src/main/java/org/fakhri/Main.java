@@ -1,8 +1,8 @@
 package org.fakhri;
 
 import org.fakhri.dao.impl.JdbcMaterialDao;
-import org.fakhri.dao.impl.JsonMaterialDao;
 import org.fakhri.entity.Material;
+import org.fakhri.dao.impl.JsonMaterialDao;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;

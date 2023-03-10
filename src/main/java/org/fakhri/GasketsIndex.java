@@ -1,8 +1,8 @@
 package org.fakhri;
 
-import org.fakhri.controllers.SubmitController;
 import org.fakhri.views.forms.GasketDetailsView;
 import org.fakhri.views.forms.MaterialDetailsView;
+import org.fakhri.controllers.SubmitController;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
