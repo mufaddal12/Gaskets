@@ -14,8 +14,13 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class Main {
 
-    public static void createAndShowGUI() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+    public static void createAndShowGUI() {
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException |
+                 UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
 
         JFrame frame = new JFrame();
         JPanel mainPanel = (new GasketsIndex()).getMainPanel();
@@ -42,12 +47,6 @@ public class Main {
 
         setup();
 
-        javax.swing.SwingUtilities.invokeLater(() -> {
-            try {
-                createAndShowGUI();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
-            }
-        });
+        javax.swing.SwingUtilities.invokeLater(Main::createAndShowGUI);
     }
 }

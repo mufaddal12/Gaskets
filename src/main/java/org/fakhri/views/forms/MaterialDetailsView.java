@@ -19,9 +19,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class MaterialDetailsView implements DetailsView<Material>, DimensionUnitView {
-    private JComboBox materialNameList;
-    private JComboBox materialDimList;
-    private JComboBox materialUnitList;
+    private JComboBox<String> materialNameList;
+    private JComboBox<Material> materialDimList;
+    private JComboBox<DimensionUnit> materialUnitList;
     private JPanel materialDetailsPanel;
 
     public MaterialDetailsView() throws IOException {
@@ -34,8 +34,8 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
     }
 
     @Override
-    public void setSelectableItems(List<Material> gaskets) {
-        materialDimList.setModel(new DefaultComboBoxModel(gaskets.toArray()));
+    public void setSelectableItems(List<Material> materials) {
+        materialDimList.setModel(new DefaultComboBoxModel<> (materials.toArray(new Material[0])));
     }
 
     @Override
@@ -56,7 +56,7 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
         unitViewController.addDataAndListeners();
     }
 
-    public JComboBox getMaterialNameList() {
+    public JComboBox<String> getMaterialNameList() {
         return materialNameList;
     }
 }

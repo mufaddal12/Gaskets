@@ -13,12 +13,8 @@ import javax.swing.JPanel;
  */
 public class GasketsIndex {
     private JPanel mainPanel;
-    private JPanel bottomOutputPanel;
-    private JLabel resultLabel;
     private JLabel outputLabel;
-    private JPanel submitPanel;
     private JButton submitButton;
-    private JPanel detailsListPanel;
     private MaterialDetailsView materialDetailsView;
     private GasketDetailsView gasketDetailsView;
     private SubmitController submitController;

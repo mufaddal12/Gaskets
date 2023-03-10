@@ -3,7 +3,6 @@ package org.fakhri.config;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
-import java.io.IOException;
 import java.util.Properties;
 
 public class DataSourceConfig {
@@ -11,7 +10,7 @@ public class DataSourceConfig {
 
     private DataSourceConfig() {}
 
-    public static DataSource getDataSourceInstance() throws IOException {
+    public static DataSource getDataSourceInstance() {
         if(dataSource == null) {
             Properties properties = PropertiesLoader.loadProperties();
 

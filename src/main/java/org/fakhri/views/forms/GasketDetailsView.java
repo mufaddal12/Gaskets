@@ -1,11 +1,12 @@
 package org.fakhri.views.forms;
 
-import org.fakhri.views.DetailsView;
-import org.fakhri.views.DimensionUnit;
 import org.fakhri.controllers.Controller;
 import org.fakhri.controllers.GasketViewController;
 import org.fakhri.controllers.UnitViewController;
 import org.fakhri.entity.Gasket;
+import org.fakhri.entity.GasketType;
+import org.fakhri.views.DetailsView;
+import org.fakhri.views.DimensionUnit;
 import org.fakhri.views.DimensionUnitView;
 
 import javax.swing.DefaultComboBoxModel;
@@ -18,11 +19,11 @@ import java.io.IOException;
 import java.util.List;
 
 public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView {
-    private JComboBox classList;
-    private JComboBox typeList;
-    private JComboBox sizeList;
+    private JComboBox<String> classList;
+    private JComboBox<GasketType> typeList;
+    private JComboBox<Gasket> sizeList;
+    private JComboBox<DimensionUnit> gasketUnitList;
     private JPanel gasketDetailsPanel;
-    private JComboBox gasketUnitList;
 
     public GasketDetailsView() throws IOException {
         setDetailsViewController(new GasketViewController(this));
@@ -36,7 +37,7 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
 
     @Override
     public void setSelectableItems(List<Gasket> gaskets) {
-        sizeList.setModel(new DefaultComboBoxModel(gaskets.toArray()));
+        sizeList.setModel(new DefaultComboBoxModel<>(gaskets.toArray(new Gasket[0])));
     }
 
     @Override
@@ -59,11 +60,11 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
         unitViewController.addDataAndListeners();
     }
 
-    public JComboBox getClassList() {
+    public JComboBox<String> getClassList() {
         return classList;
     }
 
-    public JComboBox getTypeList() {
+    public JComboBox<GasketType> getTypeList() {
         return typeList;
     }
 }

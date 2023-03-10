@@ -30,8 +30,6 @@ public class SubmitController implements Controller{
         submitButton.addActionListener(e ->{
             Material material = materialDetailsView.getSelectedItem();
             Gasket gasket = gasketDetailsView.getSelectedItem();
-            System.out.println(material);
-            System.out.println(gasket);
             outputLabel.setText(String.valueOf(Calculator.calculate(material, gasket)));
 
         });

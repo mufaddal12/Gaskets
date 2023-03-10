@@ -6,6 +6,6 @@ import javax.swing.JComboBox;
 
 public interface DimensionUnitView {
     void setUnit(DimensionUnit unit);
-    JComboBox getUnitList();
+    JComboBox<DimensionUnit> getUnitList();
     void setUnitViewController(UnitViewController unitViewController);
 }

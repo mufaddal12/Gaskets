@@ -16,8 +16,8 @@ public class UnitViewController implements Controller {
 
     @Override
     public void addDataAndListeners() {
-        JComboBox unitList = dimensionUnitView.getUnitList();
-        unitList.setModel(new DefaultComboBoxModel(DimensionUnit.values()));
+        JComboBox<DimensionUnit> unitList = dimensionUnitView.getUnitList();
+        unitList.setModel(new DefaultComboBoxModel<>(DimensionUnit.values()));
         dimensionUnitView.setUnit(DimensionUnit.MM);
 
         unitList.addActionListener(e ->

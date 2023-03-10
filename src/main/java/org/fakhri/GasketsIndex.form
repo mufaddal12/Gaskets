@@ -9,7 +9,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="cd752" binding="bottomOutputPanel" layout-manager="GridBagLayout">
+      <grid id="cd752" layout-manager="GridBagLayout">
         <constraints>
           <grid row="2" column="5" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag top="0" left="0" bottom="10" right="0" weightx="1.0" weighty="0.4"/>
@@ -17,7 +17,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="eda0b" class="javax.swing.JLabel" binding="resultLabel">
+          <component id="eda0b" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
               <gridbag top="0" left="0" bottom="0" right="10" weightx="0.5" weighty="1.0"/>
@@ -37,7 +37,7 @@
           </component>
         </children>
       </grid>
-      <grid id="6c4c5" binding="submitPanel" layout-manager="GridBagLayout">
+      <grid id="6c4c5" layout-manager="GridBagLayout">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="4" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag top="0" left="0" bottom="10" right="0" weightx="0.1" weighty="0.4"/>
@@ -56,7 +56,7 @@
           </component>
         </children>
       </grid>
-      <grid id="3c94f" binding="detailsListPanel" layout-manager="GridBagLayout">
+      <grid id="3c94f" layout-manager="GridBagLayout">
         <constraints>
           <grid row="0" column="1" row-span="2" col-span="7" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.6" weighty="1.0"/>

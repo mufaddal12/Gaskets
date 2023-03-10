@@ -25,9 +25,9 @@ public class MaterialViewController implements Controller {
 
     @Override
     public void addDataAndListeners() {
-        JComboBox materialNameList = materialDetailsView.getMaterialNameList();
+        JComboBox<String> materialNameList = materialDetailsView.getMaterialNameList();
         List<String> uniqueMaterials = materialDao.getAllUniqueMaterials();
-        materialNameList.setModel(new DefaultComboBoxModel(uniqueMaterials.toArray()));
+        materialNameList.setModel(new DefaultComboBoxModel<>(uniqueMaterials.toArray(new String[0])));
 
         materialDetailsView.setSelectableItems(materialDao.getMaterialsByName(uniqueMaterials.get(0)));
         materialDetailsView.setUnit(DimensionUnit.MM);

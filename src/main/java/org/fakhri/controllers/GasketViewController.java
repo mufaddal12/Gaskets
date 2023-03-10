@@ -25,11 +25,11 @@ public class GasketViewController implements Controller {
 
     @Override
     public void addDataAndListeners() {
-        JComboBox classList = gasketDetailsView.getClassList();
-        JComboBox typeList = gasketDetailsView.getTypeList();
+        JComboBox<String> classList = gasketDetailsView.getClassList();
+        JComboBox<GasketType> typeList = gasketDetailsView.getTypeList();
 
-        classList.setModel(new DefaultComboBoxModel(gasketDao.getAllClasses().toArray()));
-        typeList.setModel(new DefaultComboBoxModel(GasketType.values()));
+        classList.setModel(new DefaultComboBoxModel<>( gasketDao.getAllClasses().toArray(new String[0])));
+        typeList.setModel(new DefaultComboBoxModel<>(GasketType.values()));
 
         String gasketClass = (String) classList.getSelectedItem();
         GasketType gasketType = (GasketType) typeList.getSelectedItem();
