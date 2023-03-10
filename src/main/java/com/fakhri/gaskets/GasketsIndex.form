@@ -32,7 +32,7 @@
               <gridbag weightx="0.5" weighty="1.0"/>
             </constraints>
             <properties>
-              <text value="100"/>
+              <text value="--"/>
             </properties>
           </component>
         </children>
