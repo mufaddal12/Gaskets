@@ -8,9 +8,9 @@ import com.fakhri.gaskets.entity.Material;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JdbcMaterialDao implements MaterialDao {
 
@@ -44,7 +44,7 @@ public class JdbcMaterialDao implements MaterialDao {
     @Override
     public List<Material> getMaterialsByName(String key) {
         List<String> argList = MaterialsTable.COLUMNS.getAllColumnNames();
-        List<String> postArg = Arrays.asList(
+        List<String> postArg = List.of(
                 MaterialsTable.TABLE_NAME,
                 MaterialsTable.COLUMNS.MATERIAL_NAME,
                 key);
@@ -64,9 +64,7 @@ public class JdbcMaterialDao implements MaterialDao {
     }
 
     private String generateInsertQuery() {
-        List<String> argList = Arrays.asList(MaterialsTable.TABLE_NAME)
-                .stream()
-                .collect(Collectors.toList());
+        List<String> argList = Stream.of(MaterialsTable.TABLE_NAME).collect(Collectors.toList());
         List<String> postArg = MaterialsTable.COLUMNS.getAllColumnNames();
         argList.addAll(postArg);
 

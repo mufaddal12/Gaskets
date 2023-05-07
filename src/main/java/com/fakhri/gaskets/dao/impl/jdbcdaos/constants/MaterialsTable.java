@@ -1,8 +1,8 @@
 package com.fakhri.gaskets.dao.impl.jdbcdaos.constants;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class MaterialsTable {
     public static final String TABLE_NAME = "MATERIAL";
@@ -19,11 +19,11 @@ public class MaterialsTable {
         }
 
         public static List<String> getAllColumnNames() {
-            return Arrays.asList(
+            return Stream.of(
                     MATERIAL_NAME,
                     HEIGHT,
                     WIDTH
-            ).stream().collect(Collectors.toList());
+                ).collect(Collectors.toList());
         }
 
     }

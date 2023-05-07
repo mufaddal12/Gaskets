@@ -30,7 +30,6 @@ public class SubmitController implements Controller{
             Material material = materialDetailsView.getSelectedItem();
             Gasket gasket = gasketDetailsView.getSelectedItem();
             outputLabel.setText(String.valueOf(Calculator.calculate(material, gasket)));
-
         });
     }
 }
