@@ -8,13 +8,12 @@ import com.fakhri.gaskets.views.forms.GasketDetailsView;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
-import java.io.IOException;
 
 public class GasketViewController implements Controller {
     private GasketDetailsView gasketDetailsView;
     private GasketDao gasketDao;
 
-    public GasketViewController(GasketDetailsView gasketDetailsView) throws IOException {
+    public GasketViewController(GasketDetailsView gasketDetailsView) {
         this(gasketDetailsView, GasketDao.getInstance());
     }
 

@@ -1,16 +1,15 @@
 package com.fakhri.gaskets.controllers;
 
+import com.fakhri.gaskets.entity.Gasket;
 import com.fakhri.gaskets.entity.Material;
 import com.fakhri.gaskets.service.Calculator;
 import com.fakhri.gaskets.views.forms.GasketDetailsView;
 import com.fakhri.gaskets.views.forms.MaterialDetailsView;
-import com.fakhri.gaskets.entity.Gasket;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
 public class SubmitController implements Controller{
-
 
     private MaterialDetailsView materialDetailsView;
     private GasketDetailsView gasketDetailsView;

@@ -1,7 +1,5 @@
 package com.fakhri.gaskets.dao.impl.jdbcdaos.constants;
 
-import com.fakhri.gaskets.entity.Material;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,14 +24,6 @@ public class MaterialsTable {
                     HEIGHT,
                     WIDTH
             ).stream().collect(Collectors.toList());
-        }
-
-        public static Object[] getObjectListInOrder(Material material) {
-            return new Object[] {
-                    material.getName(),
-                    material.getHeight(),
-                    material.getWidth()
-            };
         }
 
     }

@@ -13,4 +13,12 @@ public class Material {
     private String name;
     private double width;
     private double height;
+
+    public static Object[] getParametersInOrder(Material material) {
+        return new Object[] {
+                material.getName(),
+                material.getHeight(),
+                material.getWidth()
+        };
+    }
 }

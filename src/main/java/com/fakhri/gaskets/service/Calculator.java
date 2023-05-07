@@ -1,13 +1,14 @@
 package com.fakhri.gaskets.service;
 
 import com.fakhri.gaskets.config.PropertiesLoader;
-import com.fakhri.gaskets.entity.Material;
 import com.fakhri.gaskets.entity.Gasket;
+import com.fakhri.gaskets.entity.Material;
 
 import java.util.Properties;
 
 public class Calculator {
     private Calculator() {}
+
     public static int calculate(Material material, Gasket gasket) {
         Properties properties = PropertiesLoader.loadProperties();
         double offset = Double.parseDouble(properties.getProperty("calculator.offset"));

@@ -43,13 +43,11 @@ public class JdbcMaterialDao implements MaterialDao {
 
     @Override
     public List<Material> getMaterialsByName(String key) {
-
         List<String> argList = MaterialsTable.COLUMNS.getAllColumnNames();
         List<String> postArg = Arrays.asList(
                 MaterialsTable.TABLE_NAME,
                 MaterialsTable.COLUMNS.MATERIAL_NAME,
                 key);
-
         argList.addAll(postArg);
 
         String query = String.format("SELECT %s, %s, %s FROM %s WHERE %s='%s'",
@@ -61,7 +59,7 @@ public class JdbcMaterialDao implements MaterialDao {
     @Override
     public Material save(Material material) {
         String query = generateInsertQuery();
-        jdbcTemplate.update(query, MaterialsTable.COLUMNS.getObjectListInOrder(material));
+        jdbcTemplate.update(query, Material.getParametersInOrder(material));
         return material;
     }
 
@@ -69,9 +67,7 @@ public class JdbcMaterialDao implements MaterialDao {
         List<String> argList = Arrays.asList(MaterialsTable.TABLE_NAME)
                 .stream()
                 .collect(Collectors.toList());
-
         List<String> postArg = MaterialsTable.COLUMNS.getAllColumnNames();
-
         argList.addAll(postArg);
 
         return String.format("INSERT INTO %s (%s, %s, %s) VALUES (?, ?, ?)",

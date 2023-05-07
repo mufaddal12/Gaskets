@@ -45,13 +45,11 @@ public class JdbcGasketDao implements GasketDao {
     @Override
     public List<Gasket> getAllByClassAndType(String gasketClass, GasketType gasketType) {
         List<String> argList = GasketsTable.COLUMNS.getAllColumnNames();
-
         List<String> postArg = Arrays.asList(GasketsTable.TABLE_NAME,
                 GasketsTable.COLUMNS.GASKET_CLASS,
                 gasketClass,
                 GasketsTable.COLUMNS.GASKET_TYPE,
                 gasketType.getKey());
-
         argList.addAll(postArg);
 
         String query = String.format("SELECT %s, %s, %s, %s, %s FROM %s WHERE %s='%s' AND %s='%s'",
@@ -62,10 +60,8 @@ public class JdbcGasketDao implements GasketDao {
 
     @Override
     public Gasket save(Gasket gasket) {
-
         String query = generateInsertQuery();
-
-        jdbcTemplate.update(query, GasketsTable.COLUMNS.getObjectListInOrder(gasket));
+        jdbcTemplate.update(query, Gasket.getParametersInOrder(gasket));
         return gasket;
     }
 
@@ -73,14 +69,10 @@ public class JdbcGasketDao implements GasketDao {
         List<String> argList = Arrays.asList(GasketsTable.TABLE_NAME)
                 .stream()
                 .collect(Collectors.toList());
-
         List<String> postArg = GasketsTable.COLUMNS.getAllColumnNames();
-
         argList.addAll(postArg);
-
         return String.format("INSERT INTO %s (%s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?)",
                 argList.toArray(new String[0])
         );
     }
-
 }
