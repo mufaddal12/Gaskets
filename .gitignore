@@ -143,3 +143,4 @@ replay_pid*
 *.idea/
 
 target/
+out/
