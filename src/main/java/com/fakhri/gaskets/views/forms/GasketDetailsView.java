@@ -1,12 +1,12 @@
 package com.fakhri.gaskets.views.forms;
 
-import com.fakhri.gaskets.entity.GasketType;
-import com.fakhri.gaskets.views.DetailsView;
-import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.controllers.Controller;
 import com.fakhri.gaskets.controllers.GasketViewController;
 import com.fakhri.gaskets.controllers.UnitViewController;
 import com.fakhri.gaskets.entity.Gasket;
+import com.fakhri.gaskets.entity.GasketType;
+import com.fakhri.gaskets.views.DetailsView;
+import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.views.DimensionUnitView;
 
 import javax.swing.DefaultComboBoxModel;
@@ -15,7 +15,6 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import java.awt.Component;
-import java.io.IOException;
 import java.util.List;
 
 public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView {
@@ -25,7 +24,7 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
     private JComboBox<DimensionUnit> gasketUnitList;
     private JPanel gasketDetailsPanel;
 
-    public GasketDetailsView() throws IOException {
+    public GasketDetailsView() {
         setDetailsViewController(new GasketViewController(this));
         setUnitViewController(new UnitViewController(this));
     }
@@ -79,7 +78,6 @@ class GasketRenderer extends DefaultListCellRenderer {
 
     @Override
     public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-
         Gasket gasket = (Gasket) value;
         String innerDiameterString = String.valueOf(gasket.getInnerDiameter() / this.dimensionUnit.getFactor());
         String outerDiameterString = String.valueOf(gasket.getOuterDiameter() / this.dimensionUnit.getFactor());

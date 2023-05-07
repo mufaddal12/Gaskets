@@ -15,4 +15,14 @@ public class Gasket {
     private GasketType type;
     private double innerDiameter;
     private double outerDiameter;
+
+    public static Object[] getParametersInOrder(Gasket gasket) {
+        return new Object[] {
+                gasket.getGasketClass(),
+                gasket.getSize(),
+                gasket.getType().getKey(),
+                gasket.getInnerDiameter(),
+                gasket.getOuterDiameter()
+        };
+    }
 }

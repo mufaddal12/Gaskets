@@ -1,13 +1,13 @@
 package com.fakhri.gaskets.views.forms;
 
 
+import com.fakhri.gaskets.controllers.Controller;
+import com.fakhri.gaskets.controllers.MaterialViewController;
+import com.fakhri.gaskets.controllers.UnitViewController;
 import com.fakhri.gaskets.entity.Material;
 import com.fakhri.gaskets.views.DetailsView;
 import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.views.DimensionUnitView;
-import com.fakhri.gaskets.controllers.Controller;
-import com.fakhri.gaskets.controllers.MaterialViewController;
-import com.fakhri.gaskets.controllers.UnitViewController;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListCellRenderer;
@@ -15,7 +15,6 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import java.awt.Component;
-import java.io.IOException;
 import java.util.List;
 
 public class MaterialDetailsView implements DetailsView<Material>, DimensionUnitView {
@@ -24,7 +23,7 @@ public class MaterialDetailsView implements DetailsView<Material>, DimensionUnit
     private JComboBox<DimensionUnit> materialUnitList;
     private JPanel materialDetailsPanel;
 
-    public MaterialDetailsView() throws IOException {
+    public MaterialDetailsView() {
         setDetailsViewController(new MaterialViewController(this));
         setUnitViewController(new UnitViewController(this));
     }
@@ -71,7 +70,6 @@ class MaterialRenderer extends DefaultListCellRenderer {
 
     @Override
     public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-
         Material material = (Material) value;
         String widthString = String.valueOf(material.getWidth() / this.dimensionUnit.getFactor());
         String heightString = String.valueOf(material.getHeight() / this.dimensionUnit.getFactor());

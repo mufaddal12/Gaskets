@@ -1,7 +1,5 @@
 package com.fakhri.gaskets.dao.impl.jdbcdaos.constants;
 
-import com.fakhri.gaskets.entity.Gasket;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,15 +28,6 @@ public class GasketsTable {
                     INNER_DIAMETER,
                     OUTER_DIAMETER
             ).stream().collect(Collectors.toList());
-        }
-        public static Object[] getObjectListInOrder(Gasket gasket) {
-            return new Object[] {
-                    gasket.getGasketClass(),
-                    gasket.getSize(),
-                    gasket.getType().getKey(),
-                    gasket.getInnerDiameter(),
-                    gasket.getOuterDiameter()
-            };
         }
     }
 }

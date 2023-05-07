@@ -3,17 +3,16 @@ package com.fakhri.gaskets;
 import com.fakhri.gaskets.dao.impl.jdbcdaos.JdbcGasketDao;
 import com.fakhri.gaskets.dao.impl.jdbcdaos.JdbcMaterialDao;
 import com.fakhri.gaskets.dao.impl.jsondaos.JsonGasketDao;
+import com.fakhri.gaskets.dao.impl.jsondaos.JsonMaterialDao;
 import com.fakhri.gaskets.entity.Gasket;
 import com.fakhri.gaskets.entity.GasketType;
 import com.fakhri.gaskets.entity.Material;
-import com.fakhri.gaskets.dao.impl.jsondaos.JsonMaterialDao;
 import com.fakhri.gaskets.exceptions.ApplicationException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import java.io.IOException;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -35,7 +34,7 @@ public class Main {
         frame.setVisible(true);
     }
 
-    private static void materialDbSetup() throws IOException {
+    private static void materialDbSetup() {
         JdbcMaterialDao jdbcMaterialDao = JdbcMaterialDao.getInstance();
         if(!jdbcMaterialDao.getAllUniqueMaterials().isEmpty()) {
             return;
@@ -48,7 +47,7 @@ public class Main {
         }
     }
 
-    private static void gasketDbSetup() throws IOException {
+    private static void gasketDbSetup() {
         JdbcGasketDao jdbcGasketDao = JdbcGasketDao.getInstance();
         if(!jdbcGasketDao.getAllClasses().isEmpty()) {
             return;
@@ -63,12 +62,12 @@ public class Main {
         }
     }
 
-    public static void setup() throws IOException {
+    public static void setup() {
         materialDbSetup();
         gasketDbSetup();
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         setup();
         javax.swing.SwingUtilities.invokeLater(Main::createAndShowGUI);
     }
