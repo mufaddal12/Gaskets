@@ -1,7 +1,8 @@
-package com.fakhri.gaskets.dao.impl;
+package com.fakhri.gaskets.dao.impl.jsondaos;
 
 import com.fakhri.gaskets.dao.MaterialDao;
 import com.fakhri.gaskets.entity.Material;
+import com.fakhri.gaskets.exceptions.ApplicationException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -27,7 +28,7 @@ public class JsonMaterialDao implements MaterialDao {
 
     private static JsonMaterialDao jsonMaterialDao;
 
-    public static JsonMaterialDao getInstance() throws IOException {
+    public static JsonMaterialDao getInstance() {
         if(jsonMaterialDao == null)
             jsonMaterialDao = new JsonMaterialDao();
         return jsonMaterialDao;
@@ -35,13 +36,18 @@ public class JsonMaterialDao implements MaterialDao {
 
     private JSONArray jsonData;
     private Map<String, Integer> materialIndices;
-    public JsonMaterialDao() throws IOException {
-        InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        String contents = reader.lines()
-                .collect(Collectors.joining(System.lineSeparator()));
-        reader.close();
-        inputStream.close();
+    public JsonMaterialDao() {
+        String contents;
+
+        try(InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        ) {
+            contents = reader.lines()
+                    .collect(Collectors.joining(System.lineSeparator()));
+        } catch(IOException e) {
+            throw new ApplicationException(e);
+        }
+
         this.jsonData = new JSONArray(contents);
         setupData();
     }

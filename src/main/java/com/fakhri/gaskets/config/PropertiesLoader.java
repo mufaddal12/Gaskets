@@ -13,17 +13,16 @@ public class PropertiesLoader {
     private PropertiesLoader() {}
 
     public static Properties loadProperties() {
-        if(properties == null){
+        if(properties != null) {
+            return properties;
+        }
+        try(InputStream inputStream = PropertiesLoader.class
+                .getClassLoader()
+                .getResourceAsStream("application.properties")) {
             properties = new Properties();
-            InputStream inputStream = PropertiesLoader.class
-                    .getClassLoader()
-                    .getResourceAsStream("application.properties");
-            try {
-                properties.load(inputStream);
-                inputStream.close();
-            } catch (IOException e) {
-                throw new ApplicationException(e);
-            }
+            properties.load(inputStream);
+        } catch (IOException e) {
+            throw new ApplicationException(e);
         }
         return properties;
     }

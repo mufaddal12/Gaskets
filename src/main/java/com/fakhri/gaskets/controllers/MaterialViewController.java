@@ -6,7 +6,6 @@ import com.fakhri.gaskets.views.forms.MaterialDetailsView;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
-import java.io.IOException;
 import java.util.List;
 
 public class MaterialViewController implements Controller {
@@ -14,7 +13,7 @@ public class MaterialViewController implements Controller {
     private MaterialDetailsView materialDetailsView;
     private MaterialDao materialDao;
 
-    public MaterialViewController(MaterialDetailsView materialView) throws IOException {
+    public MaterialViewController(MaterialDetailsView materialView) {
         this(materialView, MaterialDao.getInstance());
     }
 

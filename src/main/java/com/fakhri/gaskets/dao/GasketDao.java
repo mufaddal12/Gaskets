@@ -1,6 +1,6 @@
 package com.fakhri.gaskets.dao;
 
-import com.fakhri.gaskets.dao.impl.JsonGasketDao;
+import com.fakhri.gaskets.dao.impl.jsondaos.JsonGasketDao;
 import com.fakhri.gaskets.entity.GasketType;
 import com.fakhri.gaskets.entity.Gasket;
 
@@ -12,5 +12,6 @@ public interface GasketDao {
         return JsonGasketDao.getInstance();
     }
     List<String> getAllClasses();
-    List<Gasket> getAllByClassTypeAndSize(String gasketClass, GasketType gasketType);
+    List<Gasket> getAllByClassAndType(String gasketClass, GasketType gasketType);
+    Gasket save(Gasket gasket);
 }

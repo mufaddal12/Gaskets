@@ -1,8 +1,12 @@
 package com.fakhri.gaskets;
 
-import com.fakhri.gaskets.dao.impl.JdbcMaterialDao;
+import com.fakhri.gaskets.dao.impl.jdbcdaos.JdbcGasketDao;
+import com.fakhri.gaskets.dao.impl.jdbcdaos.JdbcMaterialDao;
+import com.fakhri.gaskets.dao.impl.jsondaos.JsonGasketDao;
+import com.fakhri.gaskets.entity.Gasket;
+import com.fakhri.gaskets.entity.GasketType;
 import com.fakhri.gaskets.entity.Material;
-import com.fakhri.gaskets.dao.impl.JsonMaterialDao;
+import com.fakhri.gaskets.dao.impl.jsondaos.JsonMaterialDao;
 import com.fakhri.gaskets.exceptions.ApplicationException;
 
 import javax.swing.JFrame;
@@ -31,7 +35,7 @@ public class Main {
         frame.setVisible(true);
     }
 
-    public static void setup() throws IOException {
+    private static void materialDbSetup() throws IOException {
         JdbcMaterialDao jdbcMaterialDao = JdbcMaterialDao.getInstance();
         if(!jdbcMaterialDao.getAllUniqueMaterials().isEmpty()) {
             return;
@@ -42,6 +46,26 @@ public class Main {
                 jdbcMaterialDao.save(material);
             }
         }
+    }
+
+    private static void gasketDbSetup() throws IOException {
+        JdbcGasketDao jdbcGasketDao = JdbcGasketDao.getInstance();
+        if(!jdbcGasketDao.getAllClasses().isEmpty()) {
+            return;
+        }
+        JsonGasketDao jsonGasketDao = JsonGasketDao.getInstance();
+        for(String gasketClass : jsonGasketDao.getAllClasses()) {
+            for(GasketType gasketType : GasketType.values()) {
+                for(Gasket gasket : jsonGasketDao.getAllByClassAndType(gasketClass, gasketType)) {
+                    jdbcGasketDao.save(gasket);
+                }
+            }
+        }
+    }
+
+    public static void setup() throws IOException {
+        materialDbSetup();
+        gasketDbSetup();
     }
 
     public static void main(String[] args) throws IOException {

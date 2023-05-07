@@ -1,8 +1,9 @@
-package com.fakhri.gaskets.dao.impl;
+package com.fakhri.gaskets.dao.impl.jsondaos;
 
 import com.fakhri.gaskets.entity.GasketType;
 import com.fakhri.gaskets.dao.GasketDao;
 import com.fakhri.gaskets.entity.Gasket;
+import com.fakhri.gaskets.exceptions.ApplicationException;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -31,7 +32,7 @@ public class JsonGasketDao implements GasketDao {
 
     private static JsonGasketDao jsonGasketDao;
 
-    public static JsonGasketDao getInstance() throws IOException {
+    public static JsonGasketDao getInstance() {
         if(jsonGasketDao == null)
             jsonGasketDao = new JsonGasketDao();
         return jsonGasketDao;
@@ -40,14 +41,19 @@ public class JsonGasketDao implements GasketDao {
     private JSONArray jsonData;
     private Map<String, Integer> classIndices;
     private Map<String, Integer> typeIndices;
-    public JsonGasketDao() throws IOException {
-        InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
-        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-        String contents = reader.lines()
-            .collect(Collectors.joining(System.lineSeparator()));
 
-        reader.close();
-        inputStream.close();
+    private JsonGasketDao() {
+        String contents;
+
+        try(InputStream inputStream = getClass().getResourceAsStream(FILE_NAME);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+        ) {
+            contents = reader.lines()
+                    .collect(Collectors.joining(System.lineSeparator()));
+        } catch(IOException e) {
+            throw new ApplicationException(e);
+        }
+
         this.jsonData = new JSONArray(contents);
         setupData();
     }
@@ -73,7 +79,7 @@ public class JsonGasketDao implements GasketDao {
     }
 
     @Override
-    public List<Gasket> getAllByClassTypeAndSize(String gasketClass, GasketType gasketType) {
+    public List<Gasket> getAllByClassAndType(String gasketClass, GasketType gasketType) {
         String type = gasketType.getKey();
 
         int classIndex = classIndices.get(gasketClass);
@@ -87,6 +93,10 @@ public class JsonGasketDao implements GasketDao {
             gaskets.add(buildGasket(dimensionsArray.getJSONObject(i), gasketType, gasketClass));
         }
         return gaskets;
+    }
+
+    public Gasket save(Gasket gasket){
+        return null;
     }
 
     private Gasket buildGasket(JSONObject dimensionObject, GasketType gasketType, String gasketClass) {
