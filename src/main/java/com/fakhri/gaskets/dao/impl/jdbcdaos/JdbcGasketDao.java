@@ -9,9 +9,9 @@ import com.fakhri.gaskets.entity.GasketType;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class JdbcGasketDao implements GasketDao {
 
@@ -45,7 +45,7 @@ public class JdbcGasketDao implements GasketDao {
     @Override
     public List<Gasket> getAllByClassAndType(String gasketClass, GasketType gasketType) {
         List<String> argList = GasketsTable.COLUMNS.getAllColumnNames();
-        List<String> postArg = Arrays.asList(GasketsTable.TABLE_NAME,
+        List<String> postArg = List.of(GasketsTable.TABLE_NAME,
                 GasketsTable.COLUMNS.GASKET_CLASS,
                 gasketClass,
                 GasketsTable.COLUMNS.GASKET_TYPE,
@@ -66,11 +66,10 @@ public class JdbcGasketDao implements GasketDao {
     }
 
     private String generateInsertQuery() {
-        List<String> argList = Arrays.asList(GasketsTable.TABLE_NAME)
-                .stream()
-                .collect(Collectors.toList());
+        List<String> argList = Stream.of(GasketsTable.TABLE_NAME).collect(Collectors.toList());
         List<String> postArg = GasketsTable.COLUMNS.getAllColumnNames();
         argList.addAll(postArg);
+
         return String.format("INSERT INTO %s (%s, %s, %s, %s, %s) VALUES (?, ?, ?, ?, ?)",
                 argList.toArray(new String[0])
         );

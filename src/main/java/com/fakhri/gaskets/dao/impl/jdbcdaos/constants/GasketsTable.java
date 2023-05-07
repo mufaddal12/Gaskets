@@ -1,8 +1,8 @@
 package com.fakhri.gaskets.dao.impl.jdbcdaos.constants;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class GasketsTable {
     public static final String TABLE_NAME = "GASKETS";
@@ -21,13 +21,13 @@ public class GasketsTable {
         }
 
         public static List<String> getAllColumnNames() {
-            return Arrays.asList(
+            return Stream.of(
                     GASKET_CLASS,
                     GASKET_SIZE,
                     GASKET_TYPE,
                     INNER_DIAMETER,
                     OUTER_DIAMETER
-            ).stream().collect(Collectors.toList());
+                ).collect(Collectors.toList());
         }
     }
 }

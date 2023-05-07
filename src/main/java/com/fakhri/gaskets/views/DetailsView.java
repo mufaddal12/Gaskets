@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface DetailsView<T> {
     T getSelectedItem();
-    void setSelectableItems(List<T> gaskets);
+    void setSelectableItems(List<T> items);
     void setDetailsViewController(Controller detailsViewController);
 }
