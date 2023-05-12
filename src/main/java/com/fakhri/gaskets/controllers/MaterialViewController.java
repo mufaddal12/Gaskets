@@ -27,7 +27,7 @@ public class MaterialViewController implements Controller {
 
         materialDetailsView.setMaterialNames(uniqueMaterials);
         materialDetailsView.setMaterials(materialDao.getMaterialsByName(uniqueMaterials.get(0)));
-        materialDetailsView.setUnit(DimensionUnit.MM);
+        materialDetailsView.updateUnit();
 
         materialDetailsView.setActionListener(getActionListener());
     }

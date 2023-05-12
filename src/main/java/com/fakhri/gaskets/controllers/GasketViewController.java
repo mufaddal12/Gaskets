@@ -29,7 +29,7 @@ public class GasketViewController implements Controller {
         GasketType gasketType = gasketDetailsView.getGasketType();
         gasketDetailsView.setGaskets(gasketDao.getAllByClassAndType(gasketClass, gasketType));
 
-        gasketDetailsView.setUnit(DimensionUnit.MM);
+        gasketDetailsView.updateUnit();
 
         gasketDetailsView.setActionListener(getActionListener());
     }

@@ -16,15 +16,18 @@ import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class MaterialDetailsView implements DimensionUnitView {
+public class MaterialDetailsView extends DimensionUnitView {
     private JComboBox<String> materialNameList;
     private JComboBox<Material> materialDimList;
     private JComboBox<DimensionUnit> materialUnitList;
     private JPanel materialDetailsPanel;
 
+    private UnitViewController unitViewController;
+
     public MaterialDetailsView() {
         setDetailsViewController(new MaterialViewController(this));
-        setUnitViewController(new UnitViewController(this));
+        this.unitViewController = new UnitViewController(this);
+        this.unitViewController.addDataAndListeners();
     }
 //    @Override
     public Material getSelectedMaterial() {
@@ -48,23 +51,27 @@ public class MaterialDetailsView implements DimensionUnitView {
         materialNameList.addActionListener(listener);
     }
 
-//    @Override
+    @Override
+    protected JComboBox getUpdateableList() {
+        return materialDimList;
+    }
+
+    @Override
+    protected DefaultListCellRenderer getCellRenderer(DimensionUnit unit) {
+        return new MaterialRenderer(unit);
+    }
+
+    @Override
+    protected JComboBox<DimensionUnit> getUnitList() {
+        return materialUnitList;
+    }
+
+    //    @Override
     public void setDetailsViewController(Controller detailsViewController) {
         detailsViewController.addDataAndListeners();
     }
 
-//    @Override
-    public void setUnit(DimensionUnit unit) {
-        materialDimList.setRenderer(new MaterialRenderer(unit));
-    }
 
-//    @Override
-    public JComboBox getUnitList() { return materialUnitList; }
-
-//    @Override
-    public void setUnitViewController(UnitViewController unitViewController) {
-        unitViewController.addDataAndListeners();
-    }
 }
 
 class MaterialRenderer extends DefaultListCellRenderer {

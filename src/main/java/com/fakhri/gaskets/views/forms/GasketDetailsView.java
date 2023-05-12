@@ -17,16 +17,19 @@ import java.awt.Component;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-public class GasketDetailsView implements DimensionUnitView {
+public class GasketDetailsView extends DimensionUnitView {
     private JComboBox<String> classList;
     private JComboBox<GasketType> typeList;
     private JComboBox<Gasket> sizeList;
     private JComboBox<DimensionUnit> gasketUnitList;
     private JPanel gasketDetailsPanel;
 
+    private UnitViewController unitViewController;
+
     public GasketDetailsView() {
         setDetailsViewController(new GasketViewController(this));
-        setUnitViewController(new UnitViewController(this));
+        this.unitViewController = new UnitViewController(this);
+        this.unitViewController.addDataAndListeners();
     }
 
 //    @Override
@@ -65,19 +68,19 @@ public class GasketDetailsView implements DimensionUnitView {
         detailsViewController.addDataAndListeners();
     }
 
-//    @Override
-    public void setUnit(DimensionUnit unit) {
-        sizeList.setRenderer(new GasketRenderer(unit));
-    }
-
-//    @Override
-    public JComboBox getUnitList() {
+    @Override
+    protected JComboBox<DimensionUnit> getUnitList() {
         return gasketUnitList;
     }
 
-//    @Override
-    public void setUnitViewController(UnitViewController unitViewController) {
-        unitViewController.addDataAndListeners();
+    @Override
+    protected DefaultListCellRenderer getCellRenderer(DimensionUnit unit) {
+        return new GasketRenderer(unit);
+    }
+
+    @Override
+    protected JComboBox getUpdateableList() {
+        return sizeList;
     }
 }
 
@@ -98,6 +101,5 @@ class GasketRenderer extends DefaultListCellRenderer {
         value = String.format("%s - %s x %s (%s)", gasket.getSize(), outerDiameterString, innerDiameterString, dimensionUnit.getKey());
 
         return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus); //To change body of generated methods, choose Tools | Templates.
-
     }
 }
