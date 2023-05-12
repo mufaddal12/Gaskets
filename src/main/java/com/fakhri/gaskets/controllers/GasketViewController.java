@@ -5,8 +5,6 @@ import com.fakhri.gaskets.entity.GasketType;
 import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.views.forms.GasketDetailsView;
 
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
 
 public class GasketViewController implements Controller {
@@ -24,25 +22,25 @@ public class GasketViewController implements Controller {
 
     @Override
     public void addDataAndListeners() {
-        JComboBox<String> classList = gasketDetailsView.getClassList();
-        JComboBox<GasketType> typeList = gasketDetailsView.getTypeList();
+        gasketDetailsView.setGasketClasses(gasketDao.getAllClasses());
+        gasketDetailsView.setGasketTypes(GasketType.values());
 
-        classList.setModel(new DefaultComboBoxModel<>(gasketDao.getAllClasses().toArray(new String[0])));
-        typeList.setModel(new DefaultComboBoxModel<>(GasketType.values()));
+        String gasketClass = gasketDetailsView.getGasketClass();
+        GasketType gasketType = gasketDetailsView.getGasketType();
+        gasketDetailsView.setGaskets(gasketDao.getAllByClassAndType(gasketClass, gasketType));
 
-        String gasketClass = (String) classList.getSelectedItem();
-        GasketType gasketType = (GasketType) typeList.getSelectedItem();
-
-        gasketDetailsView.setSelectableItems(gasketDao.getAllByClassAndType(gasketClass, gasketType));
         gasketDetailsView.setUnit(DimensionUnit.MM);
 
-        ActionListener actionListener = e -> {
-            String gasketClass1 = (String) gasketDetailsView.getClassList().getSelectedItem();
-            GasketType gasketType1 = (GasketType) gasketDetailsView.getTypeList().getSelectedItem();
-
-            gasketDetailsView.setSelectableItems(gasketDao.getAllByClassAndType(gasketClass1, gasketType1));
-        };
-        classList.addActionListener(actionListener);
-        typeList.addActionListener(actionListener);
+        gasketDetailsView.setActionListener(getActionListener());
     }
+
+    private ActionListener getActionListener() {
+        return e -> {
+            String gasketClass1 = gasketDetailsView.getGasketClass();
+            GasketType gasketType1 = gasketDetailsView.getGasketType();
+
+            gasketDetailsView.setGaskets(gasketDao.getAllByClassAndType(gasketClass1, gasketType1));
+        };
+    }
+
 }

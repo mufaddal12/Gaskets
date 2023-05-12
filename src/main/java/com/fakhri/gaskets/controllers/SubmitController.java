@@ -27,8 +27,8 @@ public class SubmitController implements Controller{
     @Override
     public void addDataAndListeners() {
         submitButton.addActionListener(e ->{
-            Material material = materialDetailsView.getSelectedItem();
-            Gasket gasket = gasketDetailsView.getSelectedItem();
+            Material material = materialDetailsView.getSelectedMaterial();
+            Gasket gasket = gasketDetailsView.getSelectedGasket();
             outputLabel.setText(String.valueOf(Calculator.calculate(material, gasket)));
         });
     }

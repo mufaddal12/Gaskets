@@ -5,7 +5,6 @@ import com.fakhri.gaskets.controllers.GasketViewController;
 import com.fakhri.gaskets.controllers.UnitViewController;
 import com.fakhri.gaskets.entity.Gasket;
 import com.fakhri.gaskets.entity.GasketType;
-import com.fakhri.gaskets.views.DetailsView;
 import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.views.DimensionUnitView;
 
@@ -15,9 +14,10 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import java.awt.Component;
+import java.awt.event.ActionListener;
 import java.util.List;
 
-public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView {
+public class GasketDetailsView implements DimensionUnitView {
     private JComboBox<String> classList;
     private JComboBox<GasketType> typeList;
     private JComboBox<Gasket> sizeList;
@@ -29,42 +29,55 @@ public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView
         setUnitViewController(new UnitViewController(this));
     }
 
-    @Override
-    public Gasket getSelectedItem() {
+//    @Override
+    public Gasket getSelectedGasket() {
         return (Gasket) sizeList.getSelectedItem();
     }
 
-    @Override
-    public void setSelectableItems(List<Gasket> gaskets) {
+//    @Override
+    public void setGaskets(List<Gasket> gaskets) {
         sizeList.setModel(new DefaultComboBoxModel<>(gaskets.toArray(new Gasket[0])));
     }
 
-    @Override
+    public String getGasketClass() {
+        return (String) classList.getSelectedItem();
+    }
+
+    public void setGasketClasses(List<String> classes) {
+        classList.setModel(new DefaultComboBoxModel<>(classes.toArray(new String[0])));
+    }
+
+    public GasketType getGasketType(){
+        return (GasketType) typeList.getSelectedItem();
+    }
+
+    public void setGasketTypes(GasketType []types) {
+        typeList.setModel(new DefaultComboBoxModel<>(types));
+    }
+
+    public void setActionListener(ActionListener listener) {
+        classList.addActionListener(listener);
+        typeList.addActionListener(listener);
+    }
+
+//    @Override
     public void setDetailsViewController(Controller detailsViewController) {
         detailsViewController.addDataAndListeners();
     }
 
-    @Override
+//    @Override
     public void setUnit(DimensionUnit unit) {
         sizeList.setRenderer(new GasketRenderer(unit));
     }
 
-    @Override
+//    @Override
     public JComboBox getUnitList() {
         return gasketUnitList;
     }
 
-    @Override
+//    @Override
     public void setUnitViewController(UnitViewController unitViewController) {
         unitViewController.addDataAndListeners();
-    }
-
-    public JComboBox<String> getClassList() {
-        return classList;
-    }
-
-    public JComboBox<GasketType> getTypeList() {
-        return typeList;
     }
 }
 
