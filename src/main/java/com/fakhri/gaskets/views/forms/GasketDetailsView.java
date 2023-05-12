@@ -5,7 +5,6 @@ import com.fakhri.gaskets.controllers.GasketViewController;
 import com.fakhri.gaskets.controllers.UnitViewController;
 import com.fakhri.gaskets.entity.Gasket;
 import com.fakhri.gaskets.entity.GasketType;
-import com.fakhri.gaskets.views.DetailsView;
 import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.views.DimensionUnitView;
 
@@ -15,56 +14,73 @@ import javax.swing.JComboBox;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import java.awt.Component;
+import java.awt.event.ActionListener;
 import java.util.List;
 
-public class GasketDetailsView implements DetailsView<Gasket>, DimensionUnitView {
+public class GasketDetailsView extends DimensionUnitView {
     private JComboBox<String> classList;
     private JComboBox<GasketType> typeList;
     private JComboBox<Gasket> sizeList;
     private JComboBox<DimensionUnit> gasketUnitList;
     private JPanel gasketDetailsPanel;
 
+    private UnitViewController unitViewController;
+
     public GasketDetailsView() {
         setDetailsViewController(new GasketViewController(this));
-        setUnitViewController(new UnitViewController(this));
+        this.unitViewController = new UnitViewController(this);
+        this.unitViewController.addDataAndListeners();
     }
 
-    @Override
-    public Gasket getSelectedItem() {
+//    @Override
+    public Gasket getSelectedGasket() {
         return (Gasket) sizeList.getSelectedItem();
     }
 
-    @Override
-    public void setSelectableItems(List<Gasket> gaskets) {
+//    @Override
+    public void setGaskets(List<Gasket> gaskets) {
         sizeList.setModel(new DefaultComboBoxModel<>(gaskets.toArray(new Gasket[0])));
     }
 
-    @Override
+    public String getGasketClass() {
+        return (String) classList.getSelectedItem();
+    }
+
+    public void setGasketClasses(List<String> classes) {
+        classList.setModel(new DefaultComboBoxModel<>(classes.toArray(new String[0])));
+    }
+
+    public GasketType getGasketType(){
+        return (GasketType) typeList.getSelectedItem();
+    }
+
+    public void setGasketTypes(GasketType []types) {
+        typeList.setModel(new DefaultComboBoxModel<>(types));
+    }
+
+    public void setActionListener(ActionListener listener) {
+        classList.addActionListener(listener);
+        typeList.addActionListener(listener);
+    }
+
+//    @Override
     public void setDetailsViewController(Controller detailsViewController) {
         detailsViewController.addDataAndListeners();
     }
 
     @Override
-    public void setUnit(DimensionUnit unit) {
-        sizeList.setRenderer(new GasketRenderer(unit));
-    }
-
-    @Override
-    public JComboBox getUnitList() {
+    protected JComboBox<DimensionUnit> getUnitList() {
         return gasketUnitList;
     }
 
     @Override
-    public void setUnitViewController(UnitViewController unitViewController) {
-        unitViewController.addDataAndListeners();
+    protected DefaultListCellRenderer getCellRenderer(DimensionUnit unit) {
+        return new GasketRenderer(unit);
     }
 
-    public JComboBox<String> getClassList() {
-        return classList;
-    }
-
-    public JComboBox<GasketType> getTypeList() {
-        return typeList;
+    @Override
+    protected JComboBox getUpdateableList() {
+        return sizeList;
     }
 }
 
@@ -85,6 +101,5 @@ class GasketRenderer extends DefaultListCellRenderer {
         value = String.format("%s - %s x %s (%s)", gasket.getSize(), outerDiameterString, innerDiameterString, dimensionUnit.getKey());
 
         return super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus); //To change body of generated methods, choose Tools | Templates.
-
     }
 }
