@@ -55,10 +55,10 @@ public class Main {
 
         for (GasketType gasketType : GasketType.values()) {
             jsonGasketDao.getAllClasses()
-                .forEach(gasketClass -> {
+                .forEach(gasketClass ->
                     jsonGasketDao.getAllByClassAndType(gasketClass, gasketType)
-                            .forEach(jdbcGasketDao::save);
-                });
+                            .forEach(jdbcGasketDao::save)
+                );
         }
     }
 

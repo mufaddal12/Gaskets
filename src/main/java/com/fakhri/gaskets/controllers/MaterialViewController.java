@@ -1,7 +1,6 @@
 package com.fakhri.gaskets.controllers;
 
 import com.fakhri.gaskets.dao.MaterialDao;
-import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.views.forms.MaterialDetailsView;
 
 import java.awt.event.ActionListener;

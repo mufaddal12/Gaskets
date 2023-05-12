@@ -2,7 +2,6 @@ package com.fakhri.gaskets.controllers;
 
 import com.fakhri.gaskets.dao.GasketDao;
 import com.fakhri.gaskets.entity.GasketType;
-import com.fakhri.gaskets.views.DimensionUnit;
 import com.fakhri.gaskets.views.forms.GasketDetailsView;
 
 import java.awt.event.ActionListener;
